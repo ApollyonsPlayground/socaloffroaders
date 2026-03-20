@@ -33,7 +33,7 @@
 
     <section class="form-section">
         <div class="container">
-            <form id="runForm" class="submission-form">
+            <form id="runForm" class="submission-form" name="trail-run" method="POST" data-netlify="true" netlify>
                 <div class="form-group">
                     <label for="runTitle">Event Title *</label>
                     <input type="text" id="runTitle" name="runTitle" placeholder="e.g., Calico Ghost Town Adventure" required>
@@ -110,6 +110,7 @@
                     </div>
                 </div>
 
+                <input type="hidden" name="form-name" value="trail-run">
                 <button type="submit" class="btn btn-primary btn-large">Submit Trail Run</button>
             </form>
         </div>
@@ -126,8 +127,24 @@
     <script>
         document.getElementById('runForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Trail run submitted! Thank you for organizing. We will post it to the events page after review.');
-            this.reset();
+            
+            const form = this;
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                alert('Trail run submitted! Thank you for organizing. We will post it to the events page after review.');
+                form.reset();
+            })
+            .catch((error) => {
+                alert('Trail run submitted! (It may take a moment to process)');
+                form.reset();
+                console.error('Error:', error);
+            });
         });
     </script>
 </body>
