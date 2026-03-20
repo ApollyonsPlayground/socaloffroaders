@@ -1,15 +1,15 @@
 /* Beginner Guide Styles - Animal Planet Dark Theme */
 
 /* Force dark theme for all beginner guide elements */
-.beginner-guide body,
-.beginner-guide .page-header,
-.beginner-guide .quick-start,
-.beginner-guide .education-section,
-.beginner-guide .buying-guide,
-.beginner-guide .gear-section,
-.beginner-guide .parts-directory,
-.beginner-guide .first-trail-section,
-.beginner-guide .etiquette-section {
+body.beginner-guide,
+body.beginner-guide .page-header,
+body.beginner-guide .quick-start,
+body.beginner-guide .education-section,
+body.beginner-guide .buying-guide,
+body.beginner-guide .gear-section,
+body.beginner-guide .parts-directory,
+body.beginner-guide .first-trail-section,
+body.beginner-guide .etiquette-section {
     background: var(--ap-black) !important;
     color: var(--ap-white) !important;
 }
