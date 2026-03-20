@@ -33,9 +33,7 @@
 
     <section class="form-section">
         <div class="container">
-            <form id="trailForm" class="submission-form" name="trail-submission">
-                <!-- Hidden field for Google Apps Script URL - REPLACE THIS VALUE -->
-                <input type="hidden" id="gasUrl" value="YOUR_GOOGLE_APPS_SCRIPT_URL_HERE">
+            <form id="trailForm" class="submission-form" name="trail-submission" method="POST" data-netlify="true" netlify>
                 <div class="form-group">
                     <label for="trailName">Trail Name *</label>
                     <input type="text" id="trailName" name="trailName" required>
@@ -134,37 +132,22 @@
         document.getElementById('trailForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const gasUrl = document.getElementById('gasUrl').value;
+            const form = this;
+            const formData = new FormData(form);
             
-            if (gasUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-                alert('Error: Google Apps Script URL not configured. Please contact admin.');
-                return;
-            }
-            
-            const formData = new FormData(this);
-            const params = new URLSearchParams();
-            
-            for (let [key, value] of formData.entries()) {
-                params.append(key, value);
-            }
-            
-            fetch(gasUrl, {
+            fetch('/', {
                 method: 'POST',
-                body: params
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    alert('Trail submission received! Thank you for contributing. You will receive an email confirmation shortly.');
-                    this.reset();
-                } else {
-                    alert('Error: ' + data.message);
-                }
+            .then(() => {
+                alert('Trail submission received! Thank you for contributing to the community.');
+                form.reset();
             })
-            .catch(error => {
+            .catch((error) => {
+                alert('Trail submitted! (It may take a moment to process)');
+                form.reset();
                 console.error('Error:', error);
-                alert('Trail submitted! (Confirmation may be delayed)');
-                this.reset();
             });
         });
     </script>
