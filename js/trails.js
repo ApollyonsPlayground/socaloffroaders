@@ -10,6 +10,21 @@ function formatDate(dateString) {
     });
 }
 
+// Generate ONX URL based on trail data
+function getOnxUrl(trail) {
+    // If trail has onxSlug, use the public trail page
+    if (trail.onxSlug) {
+        return `https://www.onxmaps.com/offroad/trails/us/california/${trail.onxSlug}`;
+    }
+    // Otherwise, fall back to coordinate view
+    return `https://webmap.onxmaps.com/offroad/map#14/${trail.coordinates.lat.toFixed(6)}/${trail.coordinates.lng.toFixed(6)}`;
+}
+
+// Get ONX button label based on trail data
+function getOnxLabel(trail) {
+    return trail.onxSlug ? "View on ONX" : "View Area in ONX";
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initTrailsPage();
     initFilters();
@@ -82,10 +97,6 @@ function createTrailCard(trail) {
                 </div>
                 <p class="trail-description">${trail.description.substring(0, 120)}...</p>
                 <div class="trail-footer-bar">
-                    <div class="trail-rating">
-                        <span class="stars">${'★'.repeat(Math.floor(trail.rating))}${trail.rating % 1 >= 0.5 ? '½' : ''}</span>
-                        <span>${trail.rating} (${trail.reviews})</span>
-                    </div>
                     <button class="view-trail-btn">View Details</button>
                 </div>
             </div>
@@ -239,6 +250,10 @@ function createTrailDetailHTML(trail) {
         ? relatedEvents.map(e => `<li><strong>${formatDate(e.date)}:</strong> ${e.title}</li>`).join('')
         : '<li>No upcoming events scheduled</li>';
     
+    const onxUrl = getOnxUrl(trail);
+    const onxLabel = getOnxLabel(trail);
+    const onxNote = trail.onxSlug ? '' : '<p class="small-note" style="font-size: 0.85rem; color: #888; margin-top: 0.25rem;">Coordinates approximate. Trail may not be exact.</p>';
+    
     return `
         <div class="trail-detail-header">
             <div class="trail-detail-overlay">
@@ -264,10 +279,6 @@ function createTrailDetailHTML(trail) {
                     <span class="label">Type</span>
                     <span class="value">${typeLabel}</span>
                 </div>
-                <div class="stat-box">
-                    <span class="label">Rating</span>
-                    <span class="value">${trail.rating} ⭐</span>
-                </div>
             </div>
             
             <div class="trail-detail-section">
@@ -288,12 +299,13 @@ function createTrailDetailHTML(trail) {
             <div class="trail-detail-section">
                 <h3>Coordinates</h3>
                 <p>Lat: ${trail.coordinates.lat.toFixed(6)}, Lng: ${trail.coordinates.lng.toFixed(6)}</p>
+                ${onxNote}
             </div>
             
             <div class="trail-actions">
-                <a href="https://webmap.onxmaps.com/offroad/map#14/${trail.coordinates.lat.toFixed(6)}/${trail.coordinates.lng.toFixed(6)}" 
+                <a href="${onxUrl}" 
                    target="_blank" class="action-btn primary">
-                    <span>🗺️</span> Open in ONX
+                    <span>🗺️</span> ${onxLabel}
                 </a>
                 <a href="https://www.google.com/maps/search/?api=1&query=${trail.coordinates.lat},${trail.coordinates.lng}" 
                    target="_blank" class="action-btn secondary">
