@@ -36,10 +36,9 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" style="background: rgba(10,10,10,0.95); backdrop-filter: blur(10px);">
         <div class="nav-brand">
-            <span class="logo">🚙</span>
-            <span class="brand-text">So Cal Off-Roaders</span>
+            <span class="brand-text" style="color: var(--ap-gold); font-weight: 700; letter-spacing: 2px;">SO CAL OFF-ROADERS</span>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span>
@@ -56,27 +55,17 @@
         </ul>
     </nav>
 
-    <!-- Hero Section - Documentary Style -->
-    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80'); background-size: cover; background-position: center; min-height: 90vh;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Explore Southern California's<br>Best Off-Road Trails</h1>
-            <p class="hero-subtitle">30+ community-curated trails from desert dunes to mountain peaks</p>
+    <!-- Hero Section - Animal Planet Style -->
+    <header class="hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80'); background-size: cover; background-position: center; min-height: 100vh; position: relative;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, var(--ap-black), transparent);"></div>
+        <div class="hero-content" style="max-width: 900px; padding: 0 2rem;">
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.875rem; color: var(--ap-gold); margin-bottom: 1rem; font-weight: 600;">Southern California Wilderness</p>
+            <h1 class="hero-title" style="font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; line-height: 1; margin-bottom: 1.5rem; text-shadow: 2px 2px 40px rgba(0,0,0,0.8);">EXPLORE THE<br>UNTAMED</h1>
+            <p class="hero-subtitle" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; line-height: 1.6;">From desert dunes to alpine peaks. Real trails. Real adventures. No boundaries.</p>
             
-            <!-- Two-Path Choice -->
-            <div class="path-choice">
-                <a href="beginner-guide.html" class="path-card beginner">
-                    <span class="path-icon">🎓</span>
-                    <h3>I'm New to Off-Roading</h3>
-                    <p>Learn 4x4 basics, gear essentials, and find beginner-friendly trails</p>
-                    <span class="path-btn">Start Learning →</span>
-                </a>
-                <a href="trails.html" class="path-card experienced">
-                    <span class="path-icon">🏔️</span>
-                    <h3>Skip to Weekend Trails</h3>
-                    <p>Experienced? Jump straight to our trail database with filters</p>
-                    <span class="path-btn">Find Trails →</span>
-                </a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="trails.html" style="background: var(--ap-gold); color: var(--ap-black); padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s;">Explore Trails</a>
+                <a href="beginner-guide.html" style="background: transparent; color: white; padding: 1rem 2.5rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: 2px solid white; transition: all 0.3s;">Start Your Journey</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -86,68 +75,70 @@
     </header>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats" style="background: var(--ap-dark); padding: 4rem 0; border-top: 1px solid var(--ap-charcoal); border-bottom: 1px solid var(--ap-charcoal);">
         <div class="container">
-            <div class="stat-grid">
+            <div class="stat-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
                 <div class="stat-item">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Curated Trails</span>
+                    <span class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--ap-gold); display: block;">30+</span>
+                    <span class="stat-label" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.875rem; color: var(--ap-light-gray);">Curated Trails</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Difficulty Levels</span>
+                    <span class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--ap-gold); display: block;">4</span>
+                    <span class="stat-label" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.875rem; color: var(--ap-light-gray);">Difficulty Levels</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">SoCal Counties</span>
+                    <span class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--ap-gold); display: block;">6</span>
+                    <span class="stat-label" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.875rem; color: var(--ap-light-gray);">SoCal Counties</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">∞</span>
-                    <span class="stat-label">Adventures</span>
+                    <span class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--ap-gold); display: block;">∞</span>
+                    <span class="stat-label" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.875rem; color: var(--ap-light-gray);">Adventures</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Trails Preview -->
-    <section class="featured-trails">
+    <section class="featured-trails" style="background: var(--ap-black); padding: 6rem 0;">
         <div class="container">
-            <h2 class="section-title">Featured Trails</h2>
-            <p class="section-subtitle">Hand-picked favorites from the community</p>
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.875rem; color: var(--ap-gold); margin-bottom: 1rem; text-align: center;">Community Favorites</p>
+            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">Featured Trails</h2>
+            <p class="section-subtitle" style="color: var(--ap-light-gray); text-align: center; margin-bottom: 3rem;">Hand-picked favorites from the community</p>
             
             <div class="trail-grid" id="featuredTrails">
                 <!-- Featured trails loaded by JavaScript -->
             </div>
             
-            <div class="text-center">
-                <a href="trails.html" class="btn btn-primary btn-large">View All 30+ Trails</a>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="trails.html" style="background: transparent; color: var(--ap-gold); padding: 1rem 2.5rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: 2px solid var(--ap-gold); transition: all 0.3s; display: inline-block;">View All Trails</a>
             </div>
         </div>
     </section>
 
     <!-- Quick Filter Section -->
-    <section class="quick-filters">
+    <section class="quick-filters" style="background: #1a1a1a; padding: 4rem 0; border-top: 1px solid #2d2d2d; border-bottom: 1px solid #2d2d2d;">
         <div class="container">
-            <h2 class="section-title">Find Your Perfect Trail</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn" data-filter="beginner">
-                    <span>🌱</span> Beginner Friendly
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.875rem; color: #c9a227; margin-bottom: 1rem; text-align: center;">Filter Trails</p>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Find Your Perfect Trail</h2>
+            <div class="filter-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                <button class="filter-btn" data-filter="beginner" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">
+                    Beginner Friendly
                 </button>
-                <button class="filter-btn" data-filter="moderate">
-                    <span>🥾</span> Moderate
+                <button class="filter-btn" data-filter="moderate" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">
+                    Moderate
                 </button>
-                <button class="filter-btn" data-filter="advanced">
-                    <span>⛰️</span> Advanced
+                <button class="filter-btn" data-filter="advanced" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">
+                    Advanced
                 </button>
-                <button class="filter-btn" data-filter="extreme">
-                    <span>⚠️</span> Extreme
+                <button class="filter-btn" data-filter="extreme" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">
+                    Extreme
                 </button>
             </div>
-            <div class="type-filters">
-                <button class="type-btn" data-type="desert">🏜️ Desert</button>
-                <button class="type-btn" data-type="mountain">🏔️ Mountain</button>
-                <button class="type-btn" data-type="canyon">🏞️ Canyon</button>
-                <button class="type-btn" data-type="rock">🪨 Rock Crawl</button>
+            <div class="type-filters" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="type-btn" data-type="desert" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">Desert</button>
+                <button class="type-btn" data-type="mountain" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">Mountain</button>
+                <button class="type-btn" data-type="canyon" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">Canyon</button>
+                <button class="type-btn" data-type="rock" style="background: transparent; color: #f5f5f5; padding: 0.75rem 1.5rem; border: 1px solid #4a4a4a; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; cursor: pointer; transition: all 0.3s;">Rock Crawl</button>
             </div>
         </div>
     </section>
@@ -182,32 +173,87 @@
         <div class="container">
             <h2 class="section-title">Trail Etiquette</h2>
             <div class="tread-lightly">
-                <div class="tl-logo">
-                    <span>TL</span>
+                <div class="tl-logo" style="border-color: #c9a227; color: #c9a227;">
+                    <span style="color: #c9a227;">TL</span>
                 </div>
                 <div class="tl-principles">
                     <div class="principle">
-                        <span class="principle-icon">🛤️</span>
+                        <span class="principle-icon" style="color: #c9a227; font-size: 1.5rem; font-weight: 700;">01</span>
                         <h4>Travel Responsibly</h4>
                         <p>Stay on designated trails. Don't create new routes.</p>
                     </div>
                     <div class="principle">
-                        <span class="principle-icon">🗑️</span>
+                        <span class="principle-icon" style="color: #c9a227; font-size: 1.5rem; font-weight: 700;">02</span>
                         <h4>Pack It Out</h4>
                         <p>Leave no trace. Pack out all trash including TP.</p>
                     </div>
                     <div class="principle">
-                        <span class="principle-icon">🔥</span>
+                        <span class="principle-icon" style="color: #c9a227; font-size: 1.5rem; font-weight: 700;">03</span>
                         <h4>Minimize Impact</h4>
                         <p>Respect wildlife, historical sites, and other users.</p>
                     </div>
                     <div class="principle">
-                        <span class="principle-icon">🤝</span>
+                        <span class="principle-icon" style="color: #c9a227; font-size: 1.5rem; font-weight: 700;">04</span>
                         <h4>Be Considerate</h4>
                         <p>Yield to uphill traffic. Help others when safe.</p>
                     </div>
                 </div>
                 <p class="tl-tagline">Tread Lightly. Leave it better than you found it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Offroaders -->
+    <section class="featured-offroaders" style="background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1920&q=80'); background-size: cover; background-position: center; padding: 6rem 0; border-top: 1px solid #2d2d2d;">
+        <div class="container">
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.875rem; color: #c9a227; margin-bottom: 1rem; text-align: center;">Community</p>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 0.5rem;">Featured Offroaders</h2>
+            <p class="section-subtitle" style="text-align: center; color: #8a8a8a; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">The builders, explorers, and content creators who inspire this community</p>
+            
+            <!-- dirtN4Low - Featured at Top -->
+            <div class="featured-driver" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); border: 2px solid #c9a227; border-radius: 12px; padding: 3rem; margin-bottom: 3rem; text-align: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 20px; right: 20px; background: #c9a227; color: #0a0a0a; padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px;">Founder</div>
+                <div style="width: 120px; height: 120px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #c9a227, #d4b43a); border-radius: 50%; display: flex; align-items: center; center; justify-content: center; font-size: 3rem; font-weight: 800; color: #0a0a0a;">D</div>
+                <h3 style="font-size: 2rem; margin-bottom: 0.5rem; color: #f5f5f5;">dirtN4Low</h3>
+                <p style="color: #c9a227; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px; font-size: 0.875rem;">The Reason This Site Exists</p>
+                <p style="color: #8a8a8a; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.6;">Pioneer of SoCal off-roading culture. Creating content, building community, and pushing limits since day one.</p>
+                <a href="https://instagram.com/dirtn4low" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #c9a227; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #c9a227; padding: 0.75rem 1.5rem; transition: all 0.3s;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                    Follow @dirtn4low
+                </a>
+            </div>
+            
+            <!-- Other Featured Drivers -->
+            <div class="offroaders-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <!-- Recovery & Support -->
+                <div class="offroader-card" style="background: #1a1a1a; border: 1px solid #2d2d2d; border-radius: 8px; padding: 2rem; text-align: center; transition: all 0.3s;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1rem; background: linear-gradient(135deg, #8b2635, #a03040); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: white;">S</div>
+                    <h4 style="margin-bottom: 0.5rem; color: #f5f5f5;">SoCal_CRWLR</h4>
+                    <p style="color: #8a8a8a; font-size: 0.875rem; margin-bottom: 1rem;">Recovery services & trail support</p>
+                    <a href="https://instagram.com/socal_crwlr" target="_blank" style="color: #c9a227; text-decoration: none; font-weight: 600; font-size: 0.875rem;">@socal_crwlr →</a>
+                </div>
+                
+                <div class="offroader-card" style="background: #1a1a1a; border: 1px solid #2d2d2d; border-radius: 8px; padding: 2rem; text-align: center; transition: all 0.3s;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1rem; background: linear-gradient(135deg, #4a5d4a, #5a6d5a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: white;">R</div>
+                    <h4 style="margin-bottom: 0.5rem; color: #f5f5f5;">Rugged_Repair</h4>
+                    <p style="color: #8a8a8a; font-size: 0.875rem; margin-bottom: 1rem;">Off-road mechanics & fabrication</p>
+                    <a href="https://instagram.com/rugged_repair" target="_blank" style="color: #c9a227; text-decoration: none; font-weight: 600; font-size: 0.875rem;">@rugged_repair →</a>
+                </div>
+                
+                <!-- Content Creators -->
+                <div class="offroader-card" style="background: #1a1a1a; border: 1px solid #2d2d2d; border-radius: 8px; padding: 2rem; text-align: center; transition: all 0.3s;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1rem; background: linear-gradient(135deg, #d4854a, #e5955a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: white;">C</div>
+                    <h4 style="margin-bottom: 0.5rem; color: #f5f5f5;">Chevys.Offroad</h4>
+                    <p style="color: #8a8a8a; font-size: 0.875rem; margin-bottom: 1rem;">Chevy truck builds & trail content</p>
+                    <a href="https://instagram.com/chevys.offroad" target="_blank" style="color: #c9a227; text-decoration: none; font-weight: 600; font-size: 0.875rem;">@chevys.offroad →</a>
+                </div>
+                
+                <div class="offroader-card" style="background: #1a1a1a; border: 1px solid #2d2d2d; border-radius: 8px; padding: 2rem; text-align: center; transition: all 0.3s;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1rem; background: linear-gradient(135deg, #6b4a3a, #7b5a4a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: white;">R</div>
+                    <h4 style="margin-bottom: 0.5rem; color: #f5f5f5;">RoughRide4x4</h4>
+                    <p style="color: #8a8a8a; font-size: 0.875rem; margin-bottom: 1rem;">Extreme trails & adventure content</p>
+                    <a href="https://instagram.com/roughride4x4" target="_blank" style="color: #c9a227; text-decoration: none; font-weight: 600; font-size: 0.875rem;">@roughride4x4 →</a>
+                </div>
             </div>
         </div>
     </section>
