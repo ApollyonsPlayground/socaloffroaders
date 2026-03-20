@@ -43,27 +43,6 @@ const trailsDB = [
     "onxSlug": "johnson-valley"
   },
   {
-    "id": 3,
-    "name": "Big Bear Alpine Trail",
-    "location": "Big Bear Lake, CA",
-    "county": "San Bernardino",
-    "difficulty": "moderate",
-    "type": "mountain",
-    "distance": "12 miles",
-    "duration": "4-5 hours",
-    "description": "Scenic mountain trail through pine forests with alpine meadows. Beautiful lake views and moderate elevation changes. Popular summer and fall destination.",
-    "coordinates": {
-      "lat": 34.2439,
-      "lng": -117.0892
-    },
-    "camping": true,
-    "campingInfo": "Multiple Forest Service campgrounds nearby",
-    "image": "big-bear.jpg",
-    "rating": 4.8,
-    "reviews": 156,
-    "onxSlug": "big-bear-alpine-trail"
-  },
-  {
     "id": 4,
     "name": "Holcomb Creek",
     "location": "Fawnskin, CA",
@@ -103,7 +82,7 @@ const trailsDB = [
     "image": "gold-mountain.jpg",
     "rating": 4.4,
     "reviews": 112,
-    "onxSlug": "gold-mountain"
+    "onxSlug": "3n69-gold-mountain"
   },
   {
     "id": 6,
@@ -166,28 +145,7 @@ const trailsDB = [
     "image": "ocotillo-wells.jpg",
     "rating": 4.5,
     "reviews": 178,
-    "onxSlug": "ocotillo-wells"
-  },
-  {
-    "id": 9,
-    "name": "Superstition Mountain",
-    "location": "Ocotillo Wells, CA",
-    "county": "San Diego",
-    "difficulty": "moderate",
-    "type": "desert",
-    "distance": "10 miles",
-    "duration": "3-4 hours",
-    "description": "Iconic desert mountain trail with sandy washes and rocky sections. Great views from the summit. Popular for sunset runs.",
-    "coordinates": {
-      "lat": 33.1167,
-      "lng": -116.1167
-    },
-    "camping": true,
-    "campingInfo": "Camping at base of mountain",
-    "image": "superstition.jpg",
-    "rating": 4.6,
-    "reviews": 134,
-    "onxSlug": "superstition-mountain"
+    "onxSlug": "ocotillo-wells-svra"
   },
   {
     "id": 10,
@@ -208,7 +166,7 @@ const trailsDB = [
     "image": "truckhaven.jpg",
     "rating": 4.3,
     "reviews": 98,
-    "onxSlug": "truckhaven-hills"
+    "onxSlug": "truckhaven-trail"
   },
   {
     "id": 11,
@@ -292,7 +250,7 @@ const trailsDB = [
     "image": "rattlesnake-canyon.jpg",
     "rating": 4.6,
     "reviews": 82,
-    "onxSlug": "rattlesnake-canyon"
+    "onxSlug": "rc3331-rattlesnake-canyon"
   },
   {
     "id": 15,
@@ -334,7 +292,7 @@ const trailsDB = [
     "image": "idyllwild.jpg",
     "rating": 4.8,
     "reviews": 124,
-    "onxSlug": "idyllwild-mountain"
+    "onxSlug": "idyllwild-mountain-road"
   },
   {
     "id": 17,
@@ -355,7 +313,7 @@ const trailsDB = [
     "image": "thomas-mountain.jpg",
     "rating": 4.5,
     "reviews": 91,
-    "onxSlug": "thomas-mountain"
+    "onxSlug": "6s13-thomas-mountain-road"
   },
   {
     "id": 18,
@@ -376,7 +334,7 @@ const trailsDB = [
     "image": "san-jacinto.jpg",
     "rating": 4.9,
     "reviews": 45,
-    "onxSlug": "san-jacinto-peak"
+    "onxSlug": "san-jacinto-ridge-trail-fs-5s09"
   },
   {
     "id": 19,
@@ -586,7 +544,7 @@ const trailsDB = [
     "image": "arrowhead.jpg",
     "rating": 4.6,
     "reviews": 98,
-    "onxSlug": "arrowhead-trail"
+    "onxSlug": "arrowhead-north-loop"
   },
   {
     "id": 29,
