@@ -287,11 +287,11 @@ function createTrailDetailHTML(trail) {
             
             <div class="trail-detail-section">
                 <h3>Coordinates</h3>
-                <p>Lat: ${trail.coordinates.lat}, Lng: ${trail.coordinates.lng}</p>
+                <p>Lat: ${trail.coordinates.lat.toFixed(6)}, Lng: ${trail.coordinates.lng.toFixed(6)}</p>
             </div>
             
             <div class="trail-actions">
-                <a href="https://webmap.onxmaps.com/offroad/map#12/${trail.coordinates.lat}/${trail.coordinates.lng}" 
+                <a href="https://webmap.onxmaps.com/offroad/map#14/${trail.coordinates.lat.toFixed(6)}/${trail.coordinates.lng.toFixed(6)}" 
                    target="_blank" class="action-btn primary">
                     <span>🗺️</span> Open in ONX
                 </a>
