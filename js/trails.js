@@ -10,7 +10,23 @@ function formatDate(dateString) {
     });
 }
 
-// Generate ONX URL based on trail data
+// Nature images for trail types
+const trailTypeImages = {
+    'desert': 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&q=80',
+    'mountain': 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+    'canyon': 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&q=80',
+    'rock': 'https://images.unsplash.com/photo-1542662565-7e4b66b529d4?w=800&q=80'
+};
+
+// Get image for trail
+function getTrailImage(trail) {
+    // If trail has a specific image property, use it
+    if (trail.image && trail.image !== 'default.jpg') {
+        // For now, use type-based images since we don't have actual trail photos
+        return trailTypeImages[trail.type] || trailTypeImages['desert'];
+    }
+    return trailTypeImages[trail.type] || trailTypeImages['desert'];
+}
 function getOnxUrl(trail) {
     // If trail has onxSlug, use the public trail page
     if (trail.onxSlug) {
@@ -76,32 +92,48 @@ function renderTrails(trails) {
 function createTrailCard(trail) {
     const difficultyLabel = trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1);
     const typeLabel = trail.type.charAt(0).toUpperCase() + trail.type.slice(1);
+    const trailImage = getTrailImage(trail);
     
     return `
         <div class="trail-card-extended" data-trail-id="${trail.id}">
-            <div class="trail-image-wrap">
-                <div class="trail-badges">
-                    <span class="badge badge-${trail.difficulty}">${difficultyLabel}</span>
-                    <span class="badge badge-type">${typeLabel}</span>
+            <div class="trail-image-wrap" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${trailImage}'); background-size: cover; background-position: center; height: 200px; position: relative; border-radius: 8px 8px 0 0;">
+                <div class="trail-badges" style="position: absolute; top: 1rem; left: 1rem; display: flex; gap: 0.5rem;">
+                    <span class="badge badge-${trail.difficulty}" style="background: ${getDifficultyColor(trail.difficulty)}; color: #0a0a0a; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px;">${difficultyLabel}</span>
+                    <span class="badge badge-type" style="background: rgba(255,255,255,0.9); color: #0a0a0a; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px;">${typeLabel}</span>
                 </div>
-                <div class="trail-quick-stats">
+                <div class="trail-quick-stats" style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem; display: flex; gap: 1rem; color: white; font-size: 0.875rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
                     <span>📏 ${trail.distance}</span>
                     <span>⏱️ ${trail.duration}</span>
-                    <span>📍 ${trail.county}</span>
                 </div>
             </div>
-            <div class="trail-content">
-                <h3>${trail.name}</h3>
-                <div class="trail-location">
-                    <span>📍</span> ${trail.location}
+            <div class="trail-content" style="padding: 1.5rem; background: #1a1a1a; border-radius: 0 0 8px 8px;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--ap-gold);">${trail.name}</h3>
+                <div class="trail-location" style="color: var(--ap-light-gray); font-size: 0.875rem; margin-bottom: 0.75rem;">
+                    📍 ${trail.location} • ${trail.county}
                 </div>
-                <p class="trail-description">${trail.description.substring(0, 120)}...</p>
-                <div class="trail-footer-bar">
-                    <button class="view-trail-btn">View Details</button>
+                <p class="trail-description" style="color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">${trail.description.substring(0, 140)}...</p>
+                
+                <div class="trail-footer-bar" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #2d2d2d;">
+                    <div class="trail-rating" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: var(--ap-gold); font-weight: 700;">${trail.rating} ★</span>
+                        <span style="color: #666; font-size: 0.875rem;">(${trail.reviews})</span>
+                    </div>
+                    <button class="view-trail-btn" style="background: var(--ap-gold); color: #0a0a0a; border: none; padding: 0.5rem 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem; cursor: pointer; border-radius: 4px; transition: all 0.3s;">View Details</button>
                 </div>
             </div>
         </div>
     `;
+}
+
+// Get difficulty color
+function getDifficultyColor(difficulty) {
+    const colors = {
+        'beginner': '#4caf50',
+        'moderate': '#ff9800',
+        'advanced': '#f44336',
+        'extreme': '#9c27b0'
+    };
+    return colors[difficulty] || '#c9a227';
 }
 
 // Initialize filters

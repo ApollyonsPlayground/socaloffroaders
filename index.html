@@ -98,22 +98,55 @@
         </div>
     </section>
 
-    <!-- Featured Trails Preview -->
-    <section class="featured-trails" style="background: var(--ap-black); padding: 6rem 0;">
-        <div class="container">
-            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.875rem; color: var(--ap-gold); margin-bottom: 1rem; text-align: center;">Community Favorites</p>
-            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">Featured Trails</h2>
-            <p class="section-subtitle" style="color: var(--ap-light-gray); text-align: center; margin-bottom: 3rem;">Hand-picked favorites from the community</p>
+    <!-- Featured Trail of the Month -->
+    <section class="featured-trail" style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(to left, rgba(201, 162, 39, 0.1), transparent);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.875rem; color: var(--ap-gold); margin-bottom: 1rem;">Trail of the Month</p>
+            <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 2rem;">Featured: Mojave Road</h2>
             
-            <div class="trail-grid" id="featuredTrails">
-                <!-- Featured trails loaded by JavaScript -->
-                <div class="loading-trails" style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--ap-light-gray); font-style: italic;">
-                    Loading featured trails...
+            <div class="featured-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="featured-image" style="position: relative;">
+                    <div style="width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, #2d2d2d, #1a1a1a); border-radius: 8px; overflow: hidden; border: 1px solid #333;">
+                        <img src="https://images.unsplash.com/photo-1542662565-7e4b66b529d4?w=1200&q=80" alt="Mojave Desert landscape" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <div style="position: absolute; bottom: -20px; right: -20px; background: var(--ap-gold); color: var(--ap-black); padding: 1rem 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">
+                        4.8 ★ Rating
+                    </div>
                 </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="trails.html" style="background: transparent; color: var(--ap-gold); padding: 1rem 2.5rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: 2px solid var(--ap-gold); transition: all 0.3s; display: inline-block;">View All Trails</a>
+                
+                <div class="featured-info">
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--ap-gold);">The Ultimate SoCal Bucket List Trail</h3>
+                    <p style="color: var(--ap-light-gray); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        Follow the historic Mojave Road - a 147-mile pioneer route across one of North America's most dramatic desert landscapes. 
+                        This multi-day adventure takes you through cinder cones, Joshua tree forests, dry lakes, and the famous Afton Canyon 
+                        "Grand Canyon of the Mojave."
+                    </p>
+                    
+                    <div class="trail-meta" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid #333;">
+                        <div>
+                            <span style="color: var(--ap-light-gray); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Distance</span>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin-top: 0.25rem;">147 Miles</p>
+                        </div>
+                        <div>
+                            <span style="color: var(--ap-light-gray); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Duration</span>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin-top: 0.25rem;">2-3 Days</p>
+                        </div>
+                        <div>
+                            <span style="color: var(--ap-light-gray); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Difficulty</span>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin-top: 0.25rem; color: #4caf50;">Moderate</p>
+                        </div>
+                        <div>
+                            <span style="color: var(--ap-light-gray); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Reviews</span>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin-top: 0.25rem;">287 Reviews</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="trails.html?id=19" style="background: var(--ap-gold); color: var(--ap-black); padding: 1rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; display: inline-block;">View Trail Details</a>
+                        <a href="https://www.onxmaps.com/offroad/trails/us/california/mojave-road-west" target="_blank" style="background: transparent; color: var(--ap-gold); padding: 1rem 2rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: 2px solid var(--ap-gold); transition: all 0.3s; display: inline-block;">View on ONX</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
