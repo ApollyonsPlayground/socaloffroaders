@@ -33,7 +33,7 @@
 
     <section class="form-section">
         <div class="container">
-            <form id="trailForm" class="submission-form">
+            <form id="trailForm" class="submission-form" name="trail-submission" method="POST" data-netlify="true" netlify>
                 <div class="form-group">
                     <label for="trailName">Trail Name *</label>
                     <input type="text" id="trailName" name="trailName" required>
@@ -131,8 +131,22 @@
     <script>
         document.getElementById('trailForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Trail submission received! Thank you for contributing to the community. We will review and add it soon.');
-            this.reset();
+            
+            const formData = new FormData(this);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                alert('Trail submission received! Thank you for contributing to the community. We will review and add it soon.');
+                this.reset();
+            })
+            .catch((error) => {
+                alert('Error submitting form. Please try again or email us directly.');
+                console.error('Error:', error);
+            });
         });
     </script>
 </body>

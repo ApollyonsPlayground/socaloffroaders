@@ -1,5 +1,15 @@
 // Trails Page JavaScript
 
+// Utility function for formatting dates (needed for events)
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initTrailsPage();
     initFilters();
