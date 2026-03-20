@@ -248,17 +248,7 @@ function createTrailDetailHTML(trail) {
             </div>
         </div>
         
-        <div class="weather-widget">
-            <div class="weather-main">
-                <span class="weather-temp">72°F</span>
-                <span class="weather-condition">☀️ Sunny</span>
-            </div>
-            <div class="weather-details">
-                <span>High: 78° Low: 55°</span>
-                <span>Wind: 8 mph</span>
-                <span>Conditions: Good for wheeling</span>
-            </div>
-        </div>
+        
         
         <div class="trail-detail-body">
             <div class="trail-stats-grid">

@@ -360,37 +360,7 @@
     border: 2px solid var(--forest-green);
 }
 
-/* Weather Widget in Modal */
-.weather-widget {
-    background: linear-gradient(135deg, var(--sky-blue), var(--sage-green));
-    color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-}
 
-.weather-main {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.weather-temp {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.weather-condition {
-    font-size: 1.25rem;
-}
-
-.weather-details {
-    display: flex;
-    gap: 2rem;
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
 
 /* Responsive */
 @media (max-width: 768px) {

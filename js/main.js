@@ -71,15 +71,35 @@ function createTrailCard(trail) {
     const difficultyClass = `badge-${trail.difficulty}`;
     const difficultyLabel = trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1);
     
+    // Get gradient based on trail type
+    const typeGradients = {
+        'desert': 'linear-gradient(135deg, #d4854a, #c9a227)',
+        'mountain': 'linear-gradient(135deg, #4a6b8a, #2d5a3d)',
+        'canyon': 'linear-gradient(135deg, #8b7355, #3d2f1f)',
+        'rock': 'linear-gradient(135deg, #3d3d3d, #1a1a1a)'
+    };
+    const gradient = typeGradients[trail.type] || 'linear-gradient(135deg, #2d5a3d, #4a7c59)';
+    
+    // Get emoji for trail type
+    const typeEmojis = {
+        'desert': '🏜️',
+        'mountain': '🏔️',
+        'canyon': '🏞️',
+        'rock': '🪨'
+    };
+    const typeEmoji = typeEmojis[trail.type] || '🗺️';
+    
     return `
         <a href="trails.html?id=${trail.id}" class="trail-card">
-            <div class="trail-image">
+            <div class="trail-image" style="background: ${gradient};">
                 <span class="trail-badge ${difficultyClass}">${difficultyLabel}</span>
+                <div class="trail-type-emoji" style="position: absolute; bottom: 1rem; right: 1rem; font-size: 2rem; opacity: 0.8;">${typeEmoji}</div>
             </div>
             <div class="trail-info">
                 <h3>${trail.name}</h3>
                 <div class="trail-meta">
                     <span>📍 ${trail.location}</span>
+                    <span>${typeEmoji} ${trail.type}</span>
                     <span>📏 ${trail.distance}</span>
                 </div>
                 <p class="trail-description">${trail.description.substring(0, 100)}...</p>
@@ -188,21 +208,7 @@ function initSmoothScroll() {
     });
 }
 
-// Weather Widget (Simulated - would integrate with real API)
-function getWeatherWidget(lat, lng) {
-    // This would normally call a weather API
-    return `
-        <div class="weather-widget">
-            <div class="weather-current">
-                <span class="temp">72°F</span>
-                <span class="condition">☀️ Sunny</span>
-            </div>
-            <div class="weather-forecast">
-                <span>High: 78° Low: 55°</span>
-            </div>
-        </div>
-    `;
-}
+
 
 // Helper: Get URL Parameters
 function getUrlParam(param) {

@@ -1,13 +1,28 @@
-/* Beginner Guide Styles */
+/* Beginner Guide Styles - Animal Planet Dark Theme */
+
+/* Force dark theme for all beginner guide elements */
+.beginner-guide body,
+.beginner-guide .page-header,
+.beginner-guide .quick-start,
+.beginner-guide .education-section,
+.beginner-guide .buying-guide,
+.beginner-guide .gear-section,
+.beginner-guide .parts-directory,
+.beginner-guide .first-trail-section,
+.beginner-guide .etiquette-section {
+    background: var(--ap-black) !important;
+    color: var(--ap-white) !important;
+}
 
 .beginner-header {
-    background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
+    background: linear-gradient(135deg, var(--ap-dark), var(--ap-black));
+    color: var(--ap-white);
 }
 
 /* Quick Start Cards */
 .quick-start {
     padding: 3rem 0;
-    background: white;
+    background: var(--ap-black);
     margin-top: -3rem;
     position: relative;
     z-index: 10;
@@ -20,42 +35,43 @@
 }
 
 .start-card {
-    background: var(--snow-white);
+    background: var(--ap-dark);
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
     text-decoration: none;
-    color: var(--deep-brown);
+    color: var(--ap-white);
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid var(--ap-charcoal);
 }
 
 .start-card:hover {
     transform: translateY(-5px);
-    border-color: var(--sunset-orange);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: var(--ap-gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .start-icon {
     font-size: 3rem;
     display: block;
     margin-bottom: 1rem;
+    color: var(--ap-gold);
 }
 
 .start-card h3 {
-    color: var(--forest-green);
+    color: var(--ap-gold);
     margin-bottom: 0.5rem;
 }
 
 .start-card p {
     font-size: 0.95rem;
-    color: var(--rock-gray);
+    color: var(--ap-light-gray);
 }
 
 /* Education Section */
 .education-section {
     padding: 5rem 0;
-    background: var(--snow-white);
+    background: var(--ap-black);
 }
 
 .edu-grid {
@@ -66,31 +82,34 @@
 }
 
 .edu-card {
-    background: white;
+    background: var(--ap-dark);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid var(--ap-charcoal);
 }
 
 .edu-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--ap-gold);
 }
 
 .edu-card h3 {
-    color: var(--forest-green);
+    color: var(--ap-gold);
     margin-bottom: 1rem;
 }
 
 .edu-card p {
     margin-bottom: 1rem;
     line-height: 1.6;
+    color: var(--ap-light-gray);
 }
 
 /* Buying Guide */
 .buying-guide {
     padding: 5rem 0;
-    background: white;
+    background: var(--ap-black);
 }
 
 .buying-content {
