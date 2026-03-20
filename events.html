@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Trail Runs | So Cal Off-Roaders</title>
+    <meta name="description" content="Join upcoming trail runs and off-roading events in Southern California.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🚙</span>
+            <span class="brand-text">So Cal Off-Roaders</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trails.html">Trails</a></li>
+            <li><a href="beginner-guide.html">Beginner Guide</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="submit-trail.html">Submit Trail</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header events-header">
+        <div class="container">
+            <h1>Trail Runs & Events</h1>
+            <p>Join the community on upcoming adventures</p>
+        </div>
+    </header>
+
+    <!-- Events Controls -->
+    <section class="events-controls">
+        <div class="container">
+            <div class="controls-bar">
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="list">List View</button>
+                    <button class="view-btn" data-view="calendar">Calendar</button>
+                </div>
+                <div class="events-filters">
+                    <select id="difficultyFilter">
+                        <option value="">All Difficulties</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="extreme">Extreme</option>
+                    </select>
+                    <a href="submit-run.html" class="btn btn-primary">Host a Run</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List View -->
+    <section id="listView" class="events-list-section">
+        <div class="container">
+            <div id="eventsList" class="events-list">
+                <!-- Events loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar View (Hidden by default) -->
+    <section id="calendarView" class="calendar-section" style="display: none;">
+        <div class="container">
+            <div class="calendar-header">
+                <button id="prevMonth" class="calendar-nav">←</button>
+                <h2 id="currentMonth">March 2026</h2>
+                <button id="nextMonth" class="calendar-nav">→</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Calendar generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Host CTA -->
+    <section class="host-cta">
+        <div class="container">
+            <div class="host-content">
+                <h2>Want to Lead a Trail Run?</h2>
+                <p>Hosting a trail run is a great way to meet other enthusiasts and share your favorite trails. Whether it's your first time or you're a seasoned leader, everyone is welcome to organize.</p>
+                <div class="host-benefits">
+                    <div class="benefit">
+                        <span>🤝</span>
+                        <p>Meet fellow off-roaders</p>
+                    </div>
+                    <div class="benefit">
+                        <span>📍</span>
+                        <p>Share your favorite trails</p>
+                    </div>
+                    <div class="benefit">
+                        <span>🎓</span>
+                        <p>Help beginners learn</p>
+                    </div>
+                </div>
+                <a href="submit-run.html" class="btn btn-primary btn-large">Submit a Trail Run</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Detail Modal -->
+    <div id="eventModal" class="event-modal">
+        <div class="event-modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div id="eventDetailContent">
+                <!-- Event details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 So Cal Off-Roaders. Adventure together.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/trails-data.js"></script>
+    <script src="js/events-data.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>

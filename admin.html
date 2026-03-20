@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | So Cal Off-Roaders</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🚙</span>
+            <span class="brand-text">So Cal Off-Roaders - Admin</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Back to Site</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <h3>Dashboard</h3>
+            <ul>
+                <li><a href="#pending-trails" class="active">Pending Trails</a></li>
+                <li><a href="#pending-runs">Pending Runs</a></li>
+                <li><a href="#all-trails">All Trails</a></li>
+                <li><a href="#all-events">All Events</a></li>
+            </ul>
+        </aside>
+
+        <main class="admin-main">
+            <h1>Admin Dashboard</h1>
+            
+            <section id="pending-trails" class="admin-section">
+                <h2>Pending Trail Submissions</h2>
+                <div class="admin-card">
+                    <p>No pending submissions</p>
+                </div>
+            </section>
+
+            <section id="pending-runs" class="admin-section">
+                <h2>Pending Trail Runs</h2>
+                <div class="admin-card">
+                    <p>No pending runs</p>
+                </div>
+            </section>
+
+            <section id="stats" class="admin-section">
+                <h2>Site Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Total Trails</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Upcoming Events</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

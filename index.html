@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Cal Off-Roaders | 30+ Trails | Community Trail Guide</title>
+    <meta name="description" content="Discover 30+ off-road trails across Southern California. Community-driven trail guide with difficulty ratings, weather, events, and gear recommendations.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Legal Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content">
+            <h2>⚠️ Important Legal Notice</h2>
+            <div class="disclaimer-text">
+                <p><strong>This is a community-run website, not affiliated with any government agency.</strong></p>
+                <p>By using this site, you acknowledge:</p>
+                <ul>
+                    <li>You are solely responsible for your vehicle, your safety, and any damage caused</li>
+                    <li>The community may offer help when available, but has no obligation to assist</li>
+                    <li>Trail conditions change constantly; information may be outdated</li>
+                    <li>Always verify trail status with official sources (BLM, Forest Service) before heading out</li>
+                    <li>Obey all posted signs, closures, and regulations</li>
+                    <li>Tread Lightly principles apply: stay on designated trails, pack out trash, respect wildlife</li>
+                </ul>
+                <p>Off-roading involves inherent risks. Proceed at your own risk.</p>
+            </div>
+            <label class="checkbox-label">
+                <input type="checkbox" id="acceptDisclaimer">
+                <span>I understand and accept these terms</span>
+            </label>
+            <button id="enterSiteBtn" class="btn btn-primary" disabled>Enter Site</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🚙</span>
+            <span class="brand-text">So Cal Off-Roaders</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="trails.html">Trails</a></li>
+            <li><a href="beginner-guide.html">Beginner Guide</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="submit-trail.html">Submit Trail</a></li>
+            <li><a href="https://instagram.com/noah2131" target="_blank" class="instagram-link">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                @noah2131
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Explore Southern California's<br>Best Off-Road Trails</h1>
+            <p class="hero-subtitle">30+ community-curated trails from desert dunes to mountain peaks</p>
+            
+            <!-- Two-Path Choice -->
+            <div class="path-choice">
+                <a href="beginner-guide.html" class="path-card beginner">
+                    <span class="path-icon">🎓</span>
+                    <h3>I'm New to Off-Roading</h3>
+                    <p>Learn 4x4 basics, gear essentials, and find beginner-friendly trails</p>
+                    <span class="path-btn">Start Learning →</span>
+                </a>
+                <a href="trails.html" class="path-card experienced">
+                    <span class="path-icon">🏔️</span>
+                    <h3>Skip to Weekend Trails</h3>
+                    <p>Experienced? Jump straight to our trail database with filters</p>
+                    <span class="path-btn">Find Trails →</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Curated Trails</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Difficulty Levels</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">SoCal Counties</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Adventures</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Trails Preview -->
+    <section class="featured-trails">
+        <div class="container">
+            <h2 class="section-title">Featured Trails</h2>
+            <p class="section-subtitle">Hand-picked favorites from the community</p>
+            
+            <div class="trail-grid" id="featuredTrails">
+                <!-- Featured trails loaded by JavaScript -->
+            </div>
+            
+            <div class="text-center">
+                <a href="trails.html" class="btn btn-primary btn-large">View All 30+ Trails</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Filter Section -->
+    <section class="quick-filters">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Trail</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn" data-filter="beginner">
+                    <span>🌱</span> Beginner Friendly
+                </button>
+                <button class="filter-btn" data-filter="moderate">
+                    <span>🥾</span> Moderate
+                </button>
+                <button class="filter-btn" data-filter="advanced">
+                    <span>⛰️</span> Advanced
+                </button>
+                <button class="filter-btn" data-filter="extreme">
+                    <span>⚠️</span> Extreme
+                </button>
+            </div>
+            <div class="type-filters">
+                <button class="type-btn" data-type="desert">🏜️ Desert</button>
+                <button class="type-btn" data-type="mountain">🏔️ Mountain</button>
+                <button class="type-btn" data-type="canyon">🏞️ Canyon</button>
+                <button class="type-btn" data-type="rock">🪨 Rock Crawl</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Preview -->
+    <section class="events-preview">
+        <div class="container">
+            <h2 class="section-title">Upcoming Trail Runs</h2>
+            <div class="events-list" id="upcomingEvents">
+                <!-- Events loaded by JavaScript -->
+            </div>
+            <div class="text-center">
+                <a href="events.html" class="btn btn-secondary">View All Events</a>
+                <a href="submit-run.html" class="btn btn-outline">Host a Run</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beginner CTA -->
+    <section class="beginner-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>New to Off-Roading?</h2>
+                <p>Don't know 4-High from 4-Low? We've got you covered with beginner guides, gear checklists, and easy trails to start your adventure.</p>
+                <a href="beginner-guide.html" class="btn btn-primary btn-large">Explore Beginner Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trail Etiquette -->
+    <section class="etiquette">
+        <div class="container">
+            <h2 class="section-title">Trail Etiquette</h2>
+            <div class="tread-lightly">
+                <div class="tl-logo">
+                    <span>TL</span>
+                </div>
+                <div class="tl-principles">
+                    <div class="principle">
+                        <span class="principle-icon">🛤️</span>
+                        <h4>Travel Responsibly</h4>
+                        <p>Stay on designated trails. Don't create new routes.</p>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-icon">🗑️</span>
+                        <h4>Pack It Out</h4>
+                        <p>Leave no trace. Pack out all trash including TP.</p>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-icon">🔥</span>
+                        <h4>Minimize Impact</h4>
+                        <p>Respect wildlife, historical sites, and other users.</p>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-icon">🤝</span>
+                        <h4>Be Considerate</h4>
+                        <p>Yield to uphill traffic. Help others when safe.</p>
+                    </div>
+                </div>
+                <p class="tl-tagline">Tread Lightly. Leave it better than you found it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>So Cal Off-Roaders</h4>
+                    <p>Community-driven trail guide for Southern California off-roading enthusiasts.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/noah2131" target="_blank" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="trails.html">All Trails</a></li>
+                        <li><a href="beginner-guide.html">Beginner Guide</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gear.html">Gear Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://www.blm.gov/california" target="_blank">BLM California</a></li>
+                        <li><a href="https://ohv.parks.ca.gov/" target="_blank">CA OHV Program</a></li>
+                        <li><a href="https://treadlightly.org/" target="_blank">Tread Lightly</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="submit-trail.html">Submit a Trail</a></li>
+                        <li><a href="submit-run.html">Host a Trail Run</a></li>
+                        <li><a href="#" onclick="alert('Admin access required')">Admin Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 So Cal Off-Roaders. Community-run, not affiliated with any government agency.</p>
+                <p class="disclaimer-reminder">Remember: You are responsible for your vehicle and safety. Trail conditions change. Always verify with official sources.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/trails-data.js"></script>
+    <script src="js/events-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Trails | So Cal Off-Roaders</title>
+    <meta name="description" content="Browse 30+ off-road trails in Southern California. Filter by difficulty, type, and location.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/trails.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🚙</span>
+            <span class="brand-text">So Cal Off-Roaders</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trails.html" class="active">Trails</a></li>
+            <li><a href="beginner-guide.html">Beginner Guide</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="submit-trail.html">Submit Trail</a></li>
+            <li><a href="https://instagram.com/noah2131" target="_blank">@noah2131</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>All Trails</h1>
+            <p>30+ curated off-road trails across Southern California</p>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label>Difficulty</label>
+                    <select id="difficultyFilter">
+                        <option value="">All Difficulties</option>
+                        <option value="beginner">🌱 Beginner</option>
+                        <option value="moderate">🥾 Moderate</option>
+                        <option value="advanced">⛰️ Advanced</option>
+                        <option value="extreme">⚠️ Extreme</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Type</label>
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="desert">🏜️ Desert</option>
+                        <option value="mountain">🏔️ Mountain</option>
+                        <option value="canyon">🏞️ Canyon</option>
+                        <option value="rock">🪨 Rock Crawl</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>County</label>
+                    <select id="countyFilter">
+                        <option value="">All Counties</option>
+                        <option value="San Bernardino">San Bernardino</option>
+                        <option value="San Diego">San Diego</option>
+                        <option value="Riverside">Riverside</option>
+                        <option value="Imperial">Imperial</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortBy">
+                        <option value="rating">⭐ Highest Rated</option>
+                        <option value="difficulty">Difficulty</option>
+                        <option value="name">Name (A-Z)</option>
+                        <option value="county">County</option>
+                    </select>
+                </div>
+                <button id="resetFilters" class="btn btn-outline">Reset</button>
+            </div>
+            <div class="results-count">
+                Showing <span id="trailCount">30</span> trails
+            </div>
+        </div>
+    </section>
+
+    <!-- Trails Grid -->
+    <section class="trails-section">
+        <div class="container">
+            <div id="trailsGrid" class="trails-grid">
+                <!-- Trails loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trail Detail Modal -->
+    <div id="trailModal" class="trail-modal">
+        <div class="trail-modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div id="trailDetailContent">
+                <!-- Trail details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 So Cal Off-Roaders. Community-run trail guide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/trails-data.js"></script>
+    <script src="js/events-data.js"></script>
+    <script src="js/trails.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Form Styles */
+
+.page-header {
+    background: linear-gradient(135deg, var(--forest-green), var(--deep-brown));
+    color: white;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.page-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    opacity: 0.9;
+}
+
+.form-section {
+    padding: 4rem 0;
+    background: var(--snow-white);
+    min-height: 60vh;
+}
+
+.submission-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--forest-green);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--sage-green);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submission-form .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .submission-form {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,441 @@
+/* Trails Page Specific Styles */
+
+.page-header {
+    background: linear-gradient(135deg, var(--forest-green), var(--deep-brown));
+    color: white;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.page-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Filters Section */
+.filters-section {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.filters-bar {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filter-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--rock-gray);
+}
+
+.filter-group select {
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.results-count {
+    font-size: 0.9rem;
+    color: var(--rock-gray);
+}
+
+/* Trails Grid */
+.trails-section {
+    padding: 3rem 0;
+    background: var(--snow-white);
+    min-height: 60vh;
+}
+
+.trails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Trail Card Extended */
+.trail-card-extended {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.trail-card-extended:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.trail-image-wrap {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
+}
+
+.trail-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trail-badges {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.trail-badges .badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.badge-beginner { background: var(--difficulty-beginner); }
+.badge-moderate { background: var(--difficulty-moderate); }
+.badge-advanced { background: var(--difficulty-advanced); }
+.badge-extreme { background: var(--difficulty-extreme); }
+
+.badge-type {
+    background: rgba(255,255,255,0.9);
+    color: var(--deep-brown);
+}
+
+.trail-quick-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 2rem 1rem 1rem;
+    display: flex;
+    gap: 1rem;
+    color: white;
+    font-size: 0.85rem;
+}
+
+.trail-content {
+    padding: 1.5rem;
+}
+
+.trail-content h3 {
+    color: var(--forest-green);
+    margin-bottom: 0.5rem;
+}
+
+.trail-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--rock-gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.trail-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--deep-brown);
+}
+
+.trail-footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.trail-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.trail-rating .stars {
+    color: var(--sunset-orange);
+}
+
+.trail-rating span {
+    font-size: 0.85rem;
+    color: var(--rock-gray);
+}
+
+.view-trail-btn {
+    background: var(--sunset-orange);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* Trail Detail Modal */
+.trail-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 10000;
+    overflow-y: auto;
+}
+
+.trail-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.trail-modal-content {
+    background: white;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trail-detail-header {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
+}
+
+.trail-detail-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trail-detail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.trail-detail-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.trail-detail-body {
+    padding: 2rem;
+}
+
+.trail-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box .label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--rock-gray);
+    margin-bottom: 0.25rem;
+}
+
+.stat-box .value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--forest-green);
+}
+
+.trail-detail-section {
+    margin-bottom: 2rem;
+}
+
+.trail-detail-section h3 {
+    color: var(--forest-green);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.trail-detail-section p {
+    line-height: 1.7;
+    color: var(--deep-brown);
+}
+
+.trail-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.action-btn.primary {
+    background: var(--sunset-orange);
+    color: white;
+}
+
+.action-btn.secondary {
+    background: var(--forest-green);
+    color: white;
+}
+
+.action-btn.outline {
+    background: transparent;
+    color: var(--forest-green);
+    border: 2px solid var(--forest-green);
+}
+
+/* Weather Widget in Modal */
+.weather-widget {
+    background: linear-gradient(135deg, var(--sky-blue), var(--sage-green));
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather-temp {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.weather-condition {
+    font-size: 1.25rem;
+}
+
+.weather-details {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trails-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trail-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filters-bar {
+        flex-direction: column;
+    }
+    
+    .filter-group select {
+        width: 100%;
+    }
+    
+    .trail-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        justify-content: center;
+    }
+}
+
+/* No Results State */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    grid-column: 1 / -1;
+}
+
+.no-results-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.no-results h3 {
+    color: var(--forest-green);
+    margin-bottom: 0.5rem;
+}
+
+.no-results p {
+    color: var(--rock-gray);
+}

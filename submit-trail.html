@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Trail | So Cal Off-Roaders</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🚙</span>
+            <span class="brand-text">So Cal Off-Roaders</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trails.html">Trails</a></li>
+            <li><a href="beginner-guide.html">Beginner Guide</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="submit-trail.html" class="active">Submit Trail</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Submit a Trail</h1>
+            <p>Share your favorite trail with the community</p>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <div class="container">
+            <form id="trailForm" class="submission-form">
+                <div class="form-group">
+                    <label for="trailName">Trail Name *</label>
+                    <input type="text" id="trailName" name="trailName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input type="text" id="location" name="location" placeholder="City, CA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="county">County *</label>
+                        <select id="county" name="county" required>
+                            <option value="">Select County</option>
+                            <option value="San Bernardino">San Bernardino</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Riverside">Riverside</option>
+                            <option value="Imperial">Imperial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="difficulty">Difficulty *</label>
+                        <select id="difficulty" name="difficulty" required>
+                            <option value="">Select Difficulty</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="advanced">Advanced</option>
+                            <option value="extreme">Extreme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Trail Type *</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select Type</option>
+                            <option value="desert">Desert</option>
+                            <option value="mountain">Mountain</option>
+                            <option value="canyon">Canyon</option>
+                            <option value="rock">Rock Crawl</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="distance">Distance</label>
+                        <input type="text" id="distance" name="distance" placeholder="e.g., 12 miles">
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" name="duration" placeholder="e.g., 3-4 hours">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="coordinates">Coordinates (if known)</label>
+                    <input type="text" id="coordinates" name="coordinates" placeholder="34.9483, -116.8642">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Trail Description *</label>
+                    <textarea id="description" name="description" rows="5" required placeholder="Describe the trail, what to expect, highlights..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="camping">Camping Info</label>
+                    <textarea id="camping" name="camping" rows="3" placeholder="Camping available? Where?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="submitterName">Your Name *</label>
+                    <input type="text" id="submitterName" name="submitterName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="submitterEmail">Your Email *</label>
+                    <input type="email" id="submitterEmail" name="submitterEmail" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Submit Trail</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 So Cal Off-Roaders</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('trailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Trail submission received! Thank you for contributing to the community. We will review and add it soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

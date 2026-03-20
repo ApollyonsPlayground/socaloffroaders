@@ -1,0 +1,461 @@
+/* Beginner Guide Styles */
+
+.beginner-header {
+    background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
+}
+
+/* Quick Start Cards */
+.quick-start {
+    padding: 3rem 0;
+    background: white;
+    margin-top: -3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.start-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.start-card {
+    background: var(--snow-white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--deep-brown);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.start-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--sunset-orange);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.start-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.start-card h3 {
+    color: var(--forest-green);
+    margin-bottom: 0.5rem;
+}
+
+.start-card p {
+    font-size: 0.95rem;
+    color: var(--rock-gray);
+}
+
+/* Education Section */
+.education-section {
+    padding: 5rem 0;
+    background: var(--snow-white);
+}
+
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.edu-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.edu-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.edu-card h3 {
+    color: var(--forest-green);
+    margin-bottom: 1rem;
+}
+
+.edu-card p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Buying Guide */
+.buying-guide {
+    padding: 5rem 0;
+    background: white;
+}
+
+.buying-content {
+    margin-top: 3rem;
+}
+
+.buying-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.tier-card {
+    background: var(--snow-white);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.tier-card.recommended {
+    border-color: var(--sunset-orange);
+    transform: scale(1.05);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--sunset-orange);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tier-card h3 {
+    color: var(--forest-green);
+    margin-bottom: 0.5rem;
+}
+
+.tier-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sunset-orange);
+    margin-bottom: 1rem;
+}
+
+.tier-card ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.tier-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.tier-examples {
+    font-size: 0.85rem;
+    color: var(--rock-gray);
+    font-style: italic;
+}
+
+/* What to Look For */
+.what-to-look-for {
+    background: var(--snow-white);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.what-to-look-for h3 {
+    color: var(--forest-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.check-icon {
+    color: var(--sage-green);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.check-item strong {
+    display: block;
+    color: var(--forest-green);
+    margin-bottom: 0.25rem;
+}
+
+.check-item p {
+    font-size: 0.9rem;
+    color: var(--rock-gray);
+    margin: 0;
+}
+
+/* Gear Section */
+.gear-section {
+    padding: 5rem 0;
+    background: var(--snow-white);
+}
+
+.gear-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gear-tab {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--sage-green);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.gear-tab.active,
+.gear-tab:hover {
+    background: var(--sage-green);
+    color: white;
+}
+
+.gear-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.gear-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.gear-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--snow-white);
+    border-radius: 6px;
+}
+
+.gear-item .essential {
+    color: var(--sunset-orange);
+    font-weight: 700;
+}
+
+/* Parts Directory */
+.parts-directory {
+    padding: 5rem 0;
+    background: white;
+}
+
+.shops-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.shop-category {
+    background: var(--snow-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.shop-category h3 {
+    color: var(--forest-green);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.shop-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.shop-link {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--deep-brown);
+    transition: all 0.3s ease;
+}
+
+.shop-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.shop-link strong {
+    color: var(--forest-green);
+    margin-bottom: 0.25rem;
+}
+
+.shop-link span {
+    font-size: 0.85rem;
+    color: var(--rock-gray);
+}
+
+.shop-link.local {
+    background: var(--sand-tan);
+}
+
+/* First Trail Section */
+.first-trail-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--sage-green), var(--forest-green));
+    color: white;
+}
+
+.first-trail-section .section-title,
+.first-trail-section .section-subtitle {
+    color: white;
+}
+
+.recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.rec-card {
+    background: white;
+    color: var(--deep-brown);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.rec-header {
+    margin-bottom: 1rem;
+}
+
+.rec-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--sunset-orange);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.rec-card h3 {
+    color: var(--forest-green);
+    font-size: 1.1rem;
+}
+
+.rec-why {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.rec-details {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.rec-details span {
+    background: var(--snow-white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* Etiquette Section */
+.etiquette-section {
+    padding: 5rem 0;
+    background: var(--snow-white);
+}
+
+.etiquette-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.etiquette-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.et-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.etiquette-card h3 {
+    color: var(--forest-green);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .start-cards,
+    .buying-tiers,
+    .recommendation-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .edu-grid,
+    .shops-grid,
+    .etiquette-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tier-card.recommended {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .start-cards,
+    .edu-grid,
+    .buying-tiers,
+    .recommendation-cards,
+    .shops-grid,
+    .etiquette-grid,
+    .checklist-grid,
+    .gear-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .gear-tabs {
+        flex-wrap: wrap;
+    }
+}
