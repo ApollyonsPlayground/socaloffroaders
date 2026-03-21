@@ -17,43 +17,5 @@
       "name": "Noah",
       "instagram": "@noah2131"
     }
-  },
-  {
-    "id": "vet-meetup-2026-04-05",
-    "title": "🇺🇸 Vet & First Responder Meetup",
-    "date": "2026-04-05T09:00:00",
-    "meetupPoint": {
-      "name": "Lytle Creek Ranger Station",
-      "coordinates": "34.2583, -117.5025",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2583,-117.5025"
-    },
-    "trail": "lytle-creek",
-    "description": "Monthly meetup for veterans, active duty, and first responders. Family friendly. We'll run Lytle Creek and have a BBQ lunch at the campground after. All skill levels welcome.",
-    "difficulty": "Beginner",
-    "maxRigs": 20,
-    "joinedCount": 12,
-    "organizer": {
-      "name": "SoCal Crwlr",
-      "instagram": "@socal_crwlr"
-    }
-  },
-  {
-    "id": "advanced-santiago-2026-04-12",
-    "title": "⛰️ Santiago Peak Challenge",
-    "date": "2026-04-12T08:00:00",
-    "meetupPoint": {
-      "name": "Main Divide Truck Trail",
-      "coordinates": "33.7111, -117.5332",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.7111,-117.5332"
-    },
-    "trail": "santiago-peak",
-    "description": "Advanced run to the highest point in Orange County. Lifted rigs with skids required. We'll tackle the rocky sections as a group. Recovery gear mandatory. Experienced spotters on hand.",
-    "difficulty": "Advanced",
-    "maxRigs": 8,
-    "joinedCount": 5,
-    "organizer": {
-      "name": "Rugged Repair",
-      "instagram": "@rugged_repair"
-    }
   }
 ]
