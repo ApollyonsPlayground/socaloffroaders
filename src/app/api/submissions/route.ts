@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createSubmission } from '@/lib/supabase';
+import { createSubmission } from '../../../lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
