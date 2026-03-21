@@ -1,5 +1,4 @@
-'use client';
-
+import { useState } from 'react';
 import { MapPin, Navigation, Mountain, Clock, Wrench } from 'lucide-react';
 
 interface Trail {
@@ -26,23 +25,16 @@ interface TrailCardProps {
   index: number;
 }
 
-const difficultyColors: Record<string, { bg: string; text: string; border: string; accent: string }> = {
-  'Beginner': { 
-    bg: 'bg-emerald-900/30', 
-    text: 'text-emerald-400', 
-    border: 'border-emerald-700/50',
-    accent: 'from-emerald-600/20'
-  },
-  'Advanced': { 
-    bg: 'bg-orange-900/30', 
-    text: 'text-orange-400', 
-    border: 'border-orange-700/50',
-    accent: 'from-orange-600/20'
-  },
+const difficultyColors: Record<string, { bg: string; text: string; border: string }> = {
+  'Beginner': { bg: 'bg-emerald-900/30', text: 'text-emerald-400', border: 'border-emerald-700/50' },
+  'Moderate': { bg: 'bg-amber-900/30', text: 'text-amber-400', border: 'border-amber-700/50' },
+  'Advanced': { bg: 'bg-orange-900/30', text: 'text-orange-400', border: 'border-orange-700/50' },
+  'Extreme': { bg: 'bg-red-900/30', text: 'text-red-400', border: 'border-red-700/50' },
 };
 
 export default function TrailCard({ trail, index }: TrailCardProps) {
   const colors = difficultyColors[trail.difficulty] || difficultyColors['Advanced'];
+  const [imageError, setImageError] = useState(false);
   
   // Alternate image sources for variety
   const imageUrls = [
@@ -54,20 +46,31 @@ export default function TrailCard({ trail, index }: TrailCardProps) {
 
   return (
     <div className="group bg-stone-800/40 backdrop-blur-sm rounded-2xl border border-stone-700 overflow-hidden hover:border-orange-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-900/10">
-      {/* Image Section */}
+      {/* Image Section with Fallback */}
       <div className="relative h-64 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent"></div>
+        {!imageError ? (
+          <>
+            <img 
+              src={imageUrl}
+              alt={trail.name}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              onError={() => setImageError(true)}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent" />
+          </>
+        ) : (
+          /* Fallback UI for broken/missing images */
+          <div className="absolute inset-0 bg-stone-800 flex flex-col items-center justify-center">
+            <Mountain size={48} className="text-stone-600 mb-2" />
+            <span className="text-stone-500 text-sm">Trail Image</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent" />
+          </div>
+        )}
         
         {/* Status Badge */}
         <div className="absolute top-4 left-4">
           <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
-            trail.status === 'Open' 
-              ? 'bg-emerald-600/90 text-emerald-50' 
-              : 'bg-red-600/90 text-red-50'
+            trail.status === 'Open' ? 'bg-emerald-600/90 text-emerald-50' : 'bg-red-600/90 text-red-50'
           }`}>
             {trail.status}
           </span>
@@ -114,9 +117,7 @@ export default function TrailCard({ trail, index }: TrailCardProps) {
         </div>
 
         {/* Description */}
-        <p className="text-stone-400 mb-5 leading-relaxed">
-          {trail.description}
-        </p>
+        <p className="text-stone-400 mb-5 leading-relaxed">{trail.description}</p>
 
         {/* Rig Requirements */}
         <div className="mb-5 p-3 bg-stone-900/50 rounded-lg border border-stone-700/50">
@@ -127,10 +128,7 @@ export default function TrailCard({ trail, index }: TrailCardProps) {
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
           {trail.tags.map((tag) => (
-            <span 
-              key={tag} 
-              className="px-3 py-1 bg-stone-700/50 text-stone-400 rounded-full text-xs border border-stone-600/30"
-            >
+            <span key={tag} className="px-3 py-1 bg-stone-700/50 text-stone-400 rounded-full text-xs border border-stone-600/30">
               {tag}
             </span>
           ))}
@@ -138,26 +136,15 @@ export default function TrailCard({ trail, index }: TrailCardProps) {
 
         {/* Navigation Suite */}
         <div className="grid grid-cols-2 gap-3">
-          {/* Google Maps Button */}
-          <a 
-            href={trail.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-3 bg-stone-700 hover:bg-stone-600 text-stone-200 rounded-lg transition-all border border-stone-600"
-          >
+          <a href={trail.mapsUrl} target="_blank" rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-3 bg-stone-700 hover:bg-stone-600 text-stone-200 rounded-lg transition-all border border-stone-600">
             <Navigation size={18} />
             <span className="font-medium">Google Maps</span>
           </a>
-
-          {/* onX Offroad Button */}
-          <a 
-            href={trail.onxUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-3 bg-orange-600 hover:bg-orange-700 text-stone-50 rounded-lg transition-all shadow-lg shadow-orange-600/20"
-          >
+          <a href={trail.onxUrl} target="_blank" rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-3 bg-orange-600 hover:bg-orange-700 text-stone-50 rounded-lg transition-all shadow-lg shadow-orange-600/20">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
             </svg>
             <span className="font-medium">Open in onX</span>
           </a>
