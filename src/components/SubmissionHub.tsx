@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 
 export default function SubmissionHub() {
@@ -20,7 +20,7 @@ export default function SubmissionHub() {
         >
           <div className="flex items-center justify-center gap-2">
             <Calendar size={18} />
-            Upcoming Events
+            Host a Run
           </div>
         </button>
         <button
@@ -43,21 +43,20 @@ export default function SubmissionHub() {
         {activeTab === 'events' ? (
           <div className="space-y-4">
             <p className="text-stone-400 text-sm mb-4">
-              Join our scheduled trail runs and off-roading events. Click an event to RSVP.
+              Want to host your own trail run? Submit your event on Luma and we'll help promote it to the community.
             </p>
-            <div className="w-full overflow-hidden rounded-lg border border-stone-700">
-              <iframe
-                src="https://luma.com/embed/calendar/cal-HOBQ0OOIQFzOFrw/events"
-                width="100%"
-                height="450"
-                frameBorder="0"
-                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
-                allowFullScreen={false}
-                aria-hidden="false"
-                tabIndex={0}
-                title="SoCal Offroaders Event Calendar"
-              />
-            </div>
+            <a
+              href="https://lu.ma/socaloffroaders/propose"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-orange-600 hover:bg-orange-700 text-stone-50 font-semibold rounded-lg transition-all shadow-lg shadow-orange-600/20"
+            >
+              <ExternalLink size={18} />
+              Submit Event on Luma
+            </a>
+            <p className="text-stone-500 text-xs text-center mt-2">
+              You'll be redirected to our Luma submission page
+            </p>
           </div>
         ) : (
           <div className="space-y-4">
@@ -66,7 +65,7 @@ export default function SubmissionHub() {
             </p>
             <a
               href="mailto:trails@socaloffroaders.org?subject=Trail%20Suggestion"
-              className="block w-full py-3 px-4 bg-orange-600 hover:bg-orange-700 text-stone-50 font-semibold rounded-lg transition-all shadow-lg shadow-orange-600/20 text-center"
+              className="block w-full py-3 px-4 bg-stone-700 hover:bg-stone-600 text-stone-50 font-semibold rounded-lg transition-all text-center"
             >
               Suggest a Trail via Email
             </a>

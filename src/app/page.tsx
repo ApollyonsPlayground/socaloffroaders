@@ -1,14 +1,16 @@
 import HeroCinematic from '../components/HeroCinematic';
 import TrailCard from '../components/TrailCard';
-import CommunityRunCard from '../components/CommunityRun';
 import SubmissionHub from '../components/SubmissionHub';
+import DisclaimerModal from '../components/DisclaimerModal';
 import trailsData from '../data/trails.json';
-import runsData from '../data/runs.json';
-import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield, Calendar } from 'lucide-react';
+import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield, Heart } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-stone-950">
+      {/* Legal Disclaimer Modal - Page Load Gate */}
+      <DisclaimerModal />
+
       {/* Sticky Legal Disclaimer Header */}
       <div className="sticky top-0 z-50 bg-red-900/90 backdrop-blur-sm border-b border-red-700">
         <div className="container mx-auto max-w-6xl px-4 py-3">
@@ -67,28 +69,29 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* EMPTY STATE or RUN CARDS */}
-          {runsData.length === 0 ? (
-            <div className="text-center py-16 bg-stone-950/50 rounded-2xl border-2 border-dashed border-stone-700 mb-12">
-              <div className="w-16 h-16 bg-stone-800 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Calendar size={32} className="text-stone-500" />
-              </div>
-              <h3 className="text-xl font-semibold text-stone-300 mb-2">
-                No upcoming runs currently
-              </h3>
-              <p className="text-stone-500 mb-6">
-                Be the first to host one below!
-              </p>
+          {/* LUMA COMMUNITY CTA - Replaces hardcoded run cards */}
+          <div className="text-center py-16 bg-stone-950/50 rounded-2xl border-2 border-dashed border-stone-700 mb-12">
+            <div className="w-16 h-16 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <MapPin size={32} className="text-emerald-400" />
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {runsData.map((run) => (
-                <CommunityRunCard key={run.id} run={run} />
-              ))}
-            </div>
-          )}
+            <h3 className="text-xl font-semibold text-stone-300 mb-2">
+              Join the Community on Luma
+            </h3>
+            <p className="text-stone-500 mb-6 max-w-md mx-auto">
+              RSVP to upcoming trail runs, get notified about new events, and connect with fellow off-roaders.
+            </p>
+            <a
+              href="https://lu.ma/socaloffroaders"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 py-3 px-6 bg-emerald-600 hover:bg-emerald-700 text-stone-50 font-semibold rounded-lg transition-all shadow-lg shadow-emerald-600/20"
+            >
+              <ExternalLink size={18} />
+              Join on Luma
+            </a>
+          </div>
 
-          {/* SUBMISSION HUB */}
+          {/* SUBMISSION HUB - Now with lu.ma propose link */}
           <SubmissionHub />
         </div>
       </section>
@@ -111,7 +114,7 @@ export default function HomePage() {
           </div>
 
           {/* Recovery Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
             {/* SoCal Crwlr */}
             <div className="bg-stone-900/50 backdrop-blur-sm rounded-2xl border border-stone-700 p-8 hover:border-orange-600/30 transition-all">
               <div className="mb-6">
@@ -174,6 +177,22 @@ export default function HomePage() {
                 <span className="font-medium">@rugged_repair</span>
               </a>
             </div>
+          </div>
+
+          {/* KO-FI SUPPORT BUTTON - Recovery Section */}
+          <div className="text-center">
+            <a
+              href="https://ko-fi.com/socaloffroaders"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 py-3 px-6 bg-[#FF5E5B] hover:bg-[#ff4240] text-white font-semibold rounded-lg transition-all shadow-lg shadow-red-500/20"
+            >
+              <Heart size={18} className="fill-white" />
+              Buy us a tank of gas ⛽
+            </a>
+            <p className="text-stone-500 text-sm mt-3">
+              Support trail maintenance and community events
+            </p>
           </div>
         </div>
       </section>
@@ -291,6 +310,17 @@ export default function HomePage() {
             </div>
             
             <div className="flex items-center gap-6 text-sm">
+              {/* KO-FI LINK - Footer */}
+              <a
+                href="https://ko-fi.com/socaloffroaders"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#FF5E5B] hover:text-[#ff4240] transition-colors"
+              >
+                <Heart size={16} className="fill-[#FF5E5B]" />
+                Support the Trails
+              </a>
+              <span className="text-stone-600">|</span>
               <a 
                 href="https://instagram.com/noah2131" 
                 target="_blank"
