@@ -3,11 +3,23 @@ import TrailCard from '../components/TrailCard';
 import CommunityRunCard from '../components/CommunityRun';
 import trailsData from '../data/trails.json';
 import runsData from '../data/runs.json';
-import { MapPin, Instagram, Wrench } from 'lucide-react';
+import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-stone-950">
+      {/* Sticky Legal Disclaimer Header */}
+      <div className="sticky top-0 z-50 bg-red-900/90 backdrop-blur-sm border-b border-red-700">
+        <div className="container mx-auto max-w-6xl px-4 py-3">
+          <div className="flex items-center justify-center gap-3 text-center">
+            <AlertTriangle size={18} className="text-red-200 flex-shrink-0" />
+            <p className="text-red-100 text-sm font-medium">
+              <span className="font-bold">DISCLAIMER:</span> Off-roading is dangerous. Data is for informational purposes only. Users assume all risk. Verify closures with USFS/BLM before travel. Tread Lightly.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <HeroCinematic />
 
@@ -82,13 +94,10 @@ export default function HomePage() {
 
           {/* Recovery Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* SoCal Crwlr */}
+            {/* SoCal Crwlr - No status badge per directive */}
             <div className="bg-stone-900/50 backdrop-blur-sm rounded-2xl border border-stone-700 p-8 hover:border-orange-600/30 transition-all">
-              <div className="flex items-center justify-between mb-6">
+              <div className="mb-6">
                 <h3 className="text-2xl font-bold text-stone-50">SoCal Crwlr</h3>
-                <span className="px-3 py-1 bg-emerald-600/20 text-emerald-400 rounded-full text-sm font-medium border border-emerald-600/30">
-                  Available
-                </span>
               </div>
               
               <p className="text-stone-400 mb-6">
@@ -115,7 +124,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Rugged Repair */}
+            {/* Rugged Repair - Keep Mobile Tech status */}
             <div className="bg-stone-900/50 backdrop-blur-sm rounded-2xl border border-stone-700 p-8 hover:border-orange-600/30 transition-all">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-stone-50">Rugged Repair</h3>
@@ -151,9 +160,110 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-stone-900 border-t border-stone-800">
+      {/* California Off-Road Resources Section */}
+      <section className="py-20 px-4 bg-stone-900 border-y border-stone-800">
         <div className="container mx-auto max-w-6xl">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-emerald-600/10 border border-emerald-600/30 text-emerald-400 text-sm font-medium uppercase tracking-wider mb-4">
+              Essential Resources
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-50 mb-4">
+              California <span className="italic text-emerald-500">Off-Road</span> Resources
+            </h2>
+            <p className="text-stone-400 text-lg max-w-2xl mx-auto">
+              Official sources for trail conditions, permits, and responsible recreation. 
+              Always verify closures before heading out.
+            </p>
+          </div>
+
+          {/* Resource Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* BLM California */}
+            <a 
+              href="https://www.blm.gov/programs/recreation/recreation-programs/off-highway-vehicles/california"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-stone-800/50 backdrop-blur-sm rounded-xl border border-stone-700 p-6 hover:border-orange-600/50 transition-all hover:shadow-lg hover:shadow-orange-900/10"
+            >
+              <div className="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-600/30 transition-colors">
+                <Mountain size={24} className="text-emerald-400" />
+              </div>
+              <h3 className="text-lg font-bold text-stone-50 mb-2">BLM California</h3>
+              <p className="text-stone-400 text-sm mb-4">Bureau of Land Management OHV areas, permits, and trail maps for California.</p>
+              <div className="flex items-center gap-1 text-orange-400 text-sm font-medium">
+                <span>Visit Site</span>
+                <ExternalLink size={14} />
+              </div>
+            </a>
+
+            {/* CA State Parks OHMVR */}
+            <a 
+              href="https://ohv.parks.ca.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-stone-800/50 backdrop-blur-sm rounded-xl border border-stone-700 p-6 hover:border-orange-600/50 transition-all hover:shadow-lg hover:shadow-orange-900/10"
+            >
+              <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600/30 transition-colors">
+                <Shield size={24} className="text-blue-400" />
+              </div>
+              <h3 className="text-lg font-bold text-stone-50 mb-2">State Parks OHMVR</h3>
+              <p className="text-stone-400 text-sm mb-4">California State Parks Off-Highway Motor Vehicle Recreation division.</p>
+              <div className="flex items-center gap-1 text-orange-400 text-sm font-medium">
+                <span>Visit Site</span>
+                <ExternalLink size={14} />
+              </div>
+            </a>
+
+            {/* Tread Lightly */}
+            <a 
+              href="https://treadlightly.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-stone-800/50 backdrop-blur-sm rounded-xl border border-stone-700 p-6 hover:border-orange-600/50 transition-all hover:shadow-lg hover:shadow-orange-900/10"
+            >
+              <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-600/30 transition-colors">
+                <TreePine size={24} className="text-green-400" />
+              </div>
+              <h3 className="text-lg font-bold text-stone-50 mb-2">Tread Lightly!</h3>
+              <p className="text-stone-400 text-sm mb-4">National nonprofit promoting responsible outdoor recreation through ethics education.</p>
+              <div className="flex items-center gap-1 text-orange-400 text-sm font-medium">
+                <span>Visit Site</span>
+                <ExternalLink size={14} />
+              </div>
+            </a>
+
+            {/* USFS Alerts */}
+            <a 
+              href="https://www.fs.usda.gov/alerts/sbnf/alerts-notices"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-stone-800/50 backdrop-blur-sm rounded-xl border border-stone-700 p-6 hover:border-orange-600/50 transition-all hover:shadow-lg hover:shadow-orange-900/10"
+            >
+              <div className="w-12 h-12 bg-amber-600/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-600/30 transition-colors">
+                <AlertTriangle size={24} className="text-amber-400" />
+              </div>
+              <h3 className="text-lg font-bold text-stone-50 mb-2">USFS Alerts</h3>
+              <p className="text-stone-400 text-sm mb-4">San Bernardino National Forest alerts, closures, and fire restrictions.</p>
+              <div className="flex items-center gap-1 text-orange-400 text-sm font-medium">
+                <span>Visit Site</span>
+                <ExternalLink size={14} />
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer with Disclaimer */}
+      <footer className="py-12 px-4 bg-stone-950 border-t border-stone-800">
+        <div className="container mx-auto max-w-6xl">
+          {/* Footer Disclaimer */}
+          <div className="bg-stone-900/50 rounded-lg border border-stone-800 p-4 mb-8">
+            <p className="text-stone-500 text-sm text-center">
+              <span className="font-semibold text-stone-400">DISCLAIMER:</span> Off-roading is dangerous. Trail data is for informational purposes only. Users assume all risk of injury, death, or property damage. Always verify trail closures and conditions with USFS, BLM, or appropriate land management agencies before travel. Practice Tread Lightly principles: travel only where permitted, respect the rights of others, avoid sensitive areas, and do your part to keep trails open.
+            </p>
+          </div>
+
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
               <span className="text-2xl">🌲</span>

@@ -189,7 +189,7 @@ export default function CommunityRunCard({ run }: CommunityRunCardProps) {
           {isJoined ? (
             <span className="flex items-center justify-center gap-2">
               <Check size={18} />
-              YOU ARE IN
+              REGISTERED
             </span>
           ) : isFull ? (
             'RUN IS FULL'
