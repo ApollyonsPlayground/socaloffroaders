@@ -57,4 +57,29 @@ export default function DisclaimerModal() {
               <p className="text-stone-300 text-sm font-medium mb-2 uppercase tracking-wide text-red-400">Owner Liability Waiver:</p>
               <p className="text-stone-400 text-sm leading-relaxed">
                 The website owner is <strong className="text-stone-200">not responsible</strong> for cancelling/rescheduling runs or notifying participants of condition changes. Responsibility for communication and safety lies <strong className="text-stone-200">solely with the individual Run Organizer</strong>.
-              </p
+              </p>
+            </div>
+
+            <p className="text-stone-300 leading-relaxed">
+              <strong className="text-stone-100">You assume all risk</strong> and hold SoCal Off-Roaders harmless from any liability for injury, death, or property damage.
+            </p>
+            
+            <p className="text-stone-500 text-xs italic">
+              Always verify trail closures with USFS/BLM before travel.
+            </p>
+          </div>
+
+          {/* Actions / Button Area */}
+          <div className="border-t border-stone-800 px-6 py-4 rounded-b-2xl flex justify-end">
+            <button
+              onClick={handleAccept}
+              className="w-full py-4 bg-red-600 hover:bg-red-700 text-stone-50 font-bold rounded-xl transition-all shadow-lg shadow-red-900/20 uppercase tracking-widest"
+            >
+              I Accept & Enter
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
