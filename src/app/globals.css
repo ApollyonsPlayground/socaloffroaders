@@ -1,32 +1,75 @@
 @import 'tailwindcss';
-@plugin 'daisyui';
+@plugin 'daisyui' {
+  themes: stone --default;
+}
 
-/* Dark Nature Theme - Earth Tones */
+/* Animal Planet Aesthetic - Stone Theme Overrides */
 :root {
-  --color-bg: #1a1f1c;
-  --color-bg-secondary: #232a26;
-  --color-bg-tertiary: #2d3530;
-  --color-bg-alt: #1e2521;
+  /* Stone palette as base */
+  --color-stone-950: #0c0a09;
+  --color-stone-900: #1c1917;
+  --color-stone-800: #292524;
+  --color-stone-700: #44403c;
+  --color-stone-600: #57534e;
+  --color-stone-500: #78716c;
+  --color-stone-400: #a8a29e;
+  --color-stone-300: #d6d3d1;
+  --color-stone-200: #e7e5e4;
+  --color-stone-100: #f5f5f4;
+  --color-stone-50: #fafaf9;
   
-  --color-text: #f0f4f1;
-  --color-text-muted: #8a9a8e;
-  
-  /* Forest Greens */
-  --color-primary: #4a7c59;
-  --color-primary-hover: #5d996e;
-  --color-primary-dark: #3a6347;
-  
-  /* Earth Browns */
-  --color-accent: #8b6914;
-  --color-accent-hover: #a67c1a;
-  
-  /* Difficulty Colors */
-  --color-beginner: #4ade80;
-  --color-moderate: #facc15;
-  --color-advanced: #fb923c;
-  --color-extreme: #ef4444;
-  
-  /* ONX Orange */
-  --color-onx: #f97316;
-  --color-onx-hover: #ea580c;
+  /* Accent colors */
+  --color-orange-600: #ea580c;
+  --color-orange-500: #f97316;
+  --color-orange-400: #fb923c;
+  --color-emerald-700: #047857;
+  --color-emerald-600: #059669;
+  --color-emerald-500: #10b981;
+  --color-emerald-400: #34d399;
+}
+
+/* Typography */
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-stone-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-700);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone-600);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
 }
