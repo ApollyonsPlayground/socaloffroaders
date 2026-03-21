@@ -1,2 +1,18 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
+
+/* Nature-inspired custom theme overrides */
+:root {
+  --color-primary: #2d5a27;
+  --color-primary-content: #f5f5dc;
+  --color-secondary: #8b4513;
+  --color-secondary-content: #f5f5dc;
+  --color-accent: #d2691e;
+  --color-accent-content: #ffffff;
+  --color-neutral: #5d4e37;
+  --color-neutral-content: #f5f5dc;
+  --color-base-100: #faf8f3;
+  --color-base-200: #f0ebe0;
+  --color-base-300: #e6dcc8;
+  --color-base-content: #2c2416;
+}
