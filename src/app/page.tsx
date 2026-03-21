@@ -1,9 +1,10 @@
 import HeroCinematic from '../components/HeroCinematic';
 import TrailCard from '../components/TrailCard';
 import CommunityRunCard from '../components/CommunityRun';
+import SubmissionHub from '../components/SubmissionHub';
 import trailsData from '../data/trails.json';
 import runsData from '../data/runs.json';
-import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield } from 'lucide-react';
+import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield, Calendar } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -66,12 +67,29 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Run Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {runsData.map((run) => (
-              <CommunityRunCard key={run.id} run={run} />
-            ))}
-          </div>
+          {/* EMPTY STATE or RUN CARDS */}
+          {runsData.length === 0 ? (
+            <div className="text-center py-16 bg-stone-950/50 rounded-2xl border-2 border-dashed border-stone-700 mb-12">
+              <div className="w-16 h-16 bg-stone-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Calendar size={32} className="text-stone-500" />
+              </div>
+              <h3 className="text-xl font-semibold text-stone-300 mb-2">
+                No upcoming runs currently
+              </h3>
+              <p className="text-stone-500 mb-6">
+                Be the first to host one below!
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {runsData.map((run) => (
+                <CommunityRunCard key={run.id} run={run} />
+              ))}
+            </div>
+          )}
+
+          {/* SUBMISSION HUB */}
+          <SubmissionHub />
         </div>
       </section>
 
@@ -94,7 +112,7 @@ export default function HomePage() {
 
           {/* Recovery Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* SoCal Crwlr - No status badge per directive */}
+            {/* SoCal Crwlr */}
             <div className="bg-stone-900/50 backdrop-blur-sm rounded-2xl border border-stone-700 p-8 hover:border-orange-600/30 transition-all">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-stone-50">SoCal Crwlr</h3>
@@ -124,7 +142,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Rugged Repair - Keep Mobile Tech status */}
+            {/* Rugged Repair */}
             <div className="bg-stone-900/50 backdrop-blur-sm rounded-2xl border border-stone-700 p-8 hover:border-orange-600/30 transition-all">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-stone-50">Rugged Repair</h3>
@@ -254,13 +272,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer with Disclaimer */}
+      {/* Footer */}
       <footer className="py-12 px-4 bg-stone-950 border-t border-stone-800">
         <div className="container mx-auto max-w-6xl">
-          {/* Footer Disclaimer */}
           <div className="bg-stone-900/50 rounded-lg border border-stone-800 p-4 mb-8">
             <p className="text-stone-500 text-sm text-center">
-              <span className="font-semibold text-stone-400">DISCLAIMER:</span> Off-roading is dangerous. Trail data is for informational purposes only. Users assume all risk of injury, death, or property damage. Always verify trail closures and conditions with USFS, BLM, or appropriate land management agencies before travel. Practice Tread Lightly principles: travel only where permitted, respect the rights of others, avoid sensitive areas, and do your part to keep trails open.
+              <span className="font-semibold text-stone-400">DISCLAIMER:</span> Off-roading is dangerous. Trail data is for informational purposes only. Users assume all risk of injury, death, or property damage. Always verify trail closures and conditions with USFS, BLM, or appropriate land management agencies before travel. Practice Tread Lightly principles.
             </p>
           </div>
 
