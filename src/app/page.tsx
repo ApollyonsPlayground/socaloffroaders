@@ -3,7 +3,7 @@ import TrailCard from '../components/TrailCard';
 import SubmissionHub from '../components/SubmissionHub';
 import DisclaimerModal from '../components/DisclaimerModal';
 import trailsData from '../data/trails.json';
-import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield, Heart } from 'lucide-react';
+import { MapPin, Instagram, Wrench, AlertTriangle, ExternalLink, TreePine, Mountain, Shield } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -179,21 +179,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* KO-FI SUPPORT BUTTON - Recovery Section */}
-          <div className="text-center">
-            <a
-              href="https://ko-fi.com/socaloffroaders"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 py-3 px-6 bg-[#FF5E5B] hover:bg-[#ff4240] text-white font-semibold rounded-lg transition-all shadow-lg shadow-red-500/20"
-            >
-              <Heart size={18} className="fill-white" />
-              Buy us a tank of gas ⛽
-            </a>
-            <p className="text-stone-500 text-sm mt-3">
-              Support trail maintenance and community events
-            </p>
-          </div>
+
         </div>
       </section>
 
@@ -310,15 +296,13 @@ export default function HomePage() {
             </div>
             
             <div className="flex items-center gap-6 text-sm">
-              {/* KO-FI LINK - Footer */}
               <a
                 href="https://ko-fi.com/socaloffroaders"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#FF5E5B] hover:text-[#ff4240] transition-colors"
+                className="text-stone-400 hover:text-[#FF5E5B] transition-colors"
               >
-                <Heart size={16} className="fill-[#FF5E5B]" />
-                Support the Trails
+                support the website creator
               </a>
               <span className="text-stone-600">|</span>
               <a 
