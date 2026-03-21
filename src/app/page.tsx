@@ -1,7 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-import TrailGrid from '../components/features/TrailGrid';
+import { MapPin, Clock, Navigation } from 'lucide-react';
 import trailsData from '../data/trails.json';
 
 interface Trail {
@@ -9,251 +6,313 @@ interface Trail {
   name: string;
   location: string;
   difficulty: string;
-  coordinates: string;
-  status: string;
+  difficultyLevel: string;
+  distance: string;
+  time: string;
+  terrain: string;
   tags: string[];
   description: string;
+  onxUrl: string;
+  mapsUrl: string;
+}
+
+// Terrain-appropriate nature images
+const terrainImages: Record<string, string[]> = {
+  mountain: [
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80',
+    'https://images.unsplash.com/photo-1511884642898-4c92249f20b6?w=400&q=80',
+  ],
+  desert: [
+    'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&q=80',
+    'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&q=80',
+    'https://images.unsplash.com/photo-1545063914-1a0c695331e2?w=400&q=80',
+  ],
+  sand: [
+    'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&q=80',
+    'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&q=80',
+  ]
+};
+
+const difficultyColors: Record<string, { bg: string; text: string; border: string }> = {
+  'Beginner': { bg: 'bg-[#4ade80]/20', text: 'text-[#4ade80]', border: 'border-[#4ade80]' },
+  'Moderate': { bg: 'bg-[#facc15]/20', text: 'text-[#facc15]', border: 'border-[#facc15]' },
+  'Advanced': { bg: 'bg-[#fb923c]/20', text: 'text-[#fb923c]', border: 'border-[#fb923c]' },
+  'Extreme': { bg: 'bg-[#ef4444]/20', text: 'text-[#ef4444]', border: 'border-[#ef4444]' },
+};
+
+function TrailRow({ trail, index }: { trail: Trail; index: number }) {
+  const colors = difficultyColors[trail.difficulty];
+  const images = terrainImages[trail.terrain] || terrainImages.mountain;
+  const imageUrl = images[index % images.length];
+
+  return (
+    <div className="bg-[#232a26] rounded-lg border border-[#2d3530] overflow-hidden hover:border-[#4a7c59] transition-colors">
+      <div className="flex flex-col md:flex-row">
+        {/* Image - terrain appropriate */}
+        <div 
+          className="w-full md:w-48 h-32 md:h-auto flex-shrink-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        ></div>
+        
+        {/* Content */}
+        <div className="flex-1 p-4 md:p-5">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-lg font-bold text-[#f0f4f1]">{trail.name}</h3>
+                <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${colors.bg} ${colors.text} border ${colors.border}`}>
+                  {trail.difficultyLevel}
+                </span>
+              </div>
+              
+              <div className="flex items-center gap-1 text-[#8a9a8e] text-sm mb-2">
+                <MapPin size={14} />
+                <span>{trail.location}</span>
+              </div>
+
+              <div className="flex flex-wrap gap-3 text-sm text-[#8a9a8e] mb-3">
+                <span className="flex items-center gap-1">
+                  <Navigation size={14} /> {trail.distance}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Clock size={14} /> {trail.time}
+                </span>
+              </div>
+
+              <p className="text-[#8a9a8e] text-sm mb-3">{trail.description}</p>
+
+              <div className="flex flex-wrap gap-1">
+                {trail.tags.map((tag) => (
+                  <span 
+                    key={tag} 
+                    className="inline-block bg-[#2d3530] text-[#8a9a8e] px-2 py-0.5 rounded text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-row md:flex-col gap-2 md:min-w-[140px]">
+              <a 
+                href={trail.onxUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 md:flex-none bg-[#f97316] hover:bg-[#ea580c] text-white text-center py-2 px-4 rounded font-medium text-sm transition-colors"
+              >
+                Open in ONX
+              </a>
+              <a 
+                href={trail.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 md:flex-none bg-[#2d3530] hover:bg-[#3d4540] text-[#f0f4f1] text-center py-2 px-4 rounded font-medium text-sm transition-colors border border-[#4a7c59]"
+              >
+                Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TrailSection({ title, description, trails, icon }: { 
+  title: string; 
+  description: string; 
+  trails: Trail[];
+  icon: string;
+}) {
+  if (trails.length === 0) return null;
+
+  return (
+    <section className="py-8 px-4" id={title.toLowerCase().replace(' ', '-')} >
+      <div className="container mx-auto max-w-5xl">
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-2xl">{icon}</span>
+            <h2 className="text-2xl font-bold text-[#f0f4f1]">{title}</h2>
+          </div>
+          <p className="text-[#8a9a8e]">{description}</p>
+        </div>
+
+        <div className="space-y-4">
+          {trails.map((trail, index) => (
+            <TrailRow key={trail.id} trail={trail} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default function HomePage() {
-  const [selectedTrail, setSelectedTrail] = useState<Trail | null>(null);
+  const beginnerTrails = trailsData.filter(t => t.difficulty === 'Beginner');
+  const moderateTrails = trailsData.filter(t => t.difficulty === 'Moderate');
+  const advancedTrails = trailsData.filter(t => t.difficulty === 'Advanced');
+  const extremeTrails = trailsData.filter(t => t.difficulty === 'Extreme');
 
   return (
-    <main className="min-h-screen bg-[#faf8f3]">
-      {/* Hero with nature background */}
-      <header 
-        className="relative py-16 px-4 shadow-lg"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(45, 90, 39, 0.85), rgba(45, 90, 39, 0.9)), url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="container mx-auto relative z-10">
+    <main className="min-h-screen bg-[#1a1f1c]">
+      {/* Header */}
+      <header className="bg-[#232a26] border-b border-[#2d3530] py-4 px-4">
+        <div className="container mx-auto max-w-5xl">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-4xl">🏔️</span>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🌲</span>
               <div>
-                <h1 className="text-4xl font-bold text-[#f5f5dc]">SoCal Off-Roaders</h1>
-                <p className="text-[#f5f5dc]/80 text-sm">Explore Southern California's wilderness</p>
+                <h1 className="text-xl font-bold text-[#f0f4f1]">SoCal Off-Roaders</h1>
+                <p className="text-[#8a9a8e] text-xs">Desert Runs & Trail Events</p>
               </div>
             </div>
-            <nav className="hidden md:flex gap-6">
-              <a href="#trails" className="text-[#f5f5dc] hover:text-[#d2691e] transition-colors">Trails</a>
-              <a href="#recovery" className="text-[#f5f5dc] hover:text-[#d2691e] transition-colors">Recovery</a>
+            <nav className="hidden md:flex items-center gap-6">
+              <a href="#beginner-trails" className="text-[#8a9a8e] hover:text-[#4ade80] text-sm transition-colors">Beginner</a>
+              <a href="#moderate-trails" className="text-[#8a9a8e] hover:text-[#facc15] text-sm transition-colors">Moderate</a>
+              <a href="#advanced-trails" className="text-[#8a9a8e] hover:text-[#fb923c] text-sm transition-colors">Advanced</a>
+              <a href="#extreme-trails" className="text-[#8a9a8e] hover:text-[#ef4444] text-sm transition-colors">Extreme</a>
             </nav>
           </div>
         </div>
       </header>
 
-      {/* Desert landscape section */}
-      <section 
-        className="relative py-12"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1920&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div className="bg-white/90 backdrop-blur rounded-lg shadow-lg p-6">
-              <div className="text-4xl font-bold text-[#2d5a27]">{trailsData.length}</div>
-              <div className="text-[#5d4e37] font-medium">Trails Mapped</div>
+      {/* Hero */}
+      <section className="py-12 px-4 bg-[#232a26]">
+        <div className="container mx-auto max-w-5xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#f0f4f1] mb-4">Discover SoCal's Best Trails</h2>
+          <p className="text-[#8a9a8e] mb-8 max-w-2xl mx-auto">Your guide to Southern California's off-road destinations. From desert dunes to mountain ridges, find your next adventure.</p>
+          
+          <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+            <div className="bg-[#1a1f1c] rounded-lg p-4 border border-[#2d3530]">
+              <div className="text-2xl font-bold text-[#4a7c59]">{trailsData.length}</div>
+              <div className="text-[#8a9a8e] text-xs">Trails Mapped</div>
             </div>
-            <div className="bg-white/90 backdrop-blur rounded-lg shadow-lg p-6">
-              <div className="text-4xl font-bold text-[#8b4513]">4</div>
-              <div className="text-[#5d4e37] font-medium">Difficulty Levels</div>
+            <div className="bg-[#1a1f1c] rounded-lg p-4 border border-[#2d3530]">
+              <div className="text-2xl font-bold text-[#a67c1a]">4</div>
+              <div className="text-[#8a9a8e] text-xs">Difficulty Levels</div>
             </div>
-            <div className="bg-white/90 backdrop-blur rounded-lg shadow-lg p-6">
-              <div className="text-4xl font-bold text-[#d2691e]">SoCal</div>
-              <div className="text-[#5d4e37] font-medium">Wilderness Areas</div>
+            <div className="bg-[#1a1f1c] rounded-lg p-4 border border-[#2d3530]">
+              <div className="text-2xl font-bold text-[#f97316]">SoCal</div>
+              <div className="text-[#8a9a8e] text-xs">All Southern CA</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trails Section */}
-      <section id="trails" className="py-16 px-4 bg-[#f0ebe0]">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#2c2416] mb-2">🌄 Trail Guides</h2>
-            <p className="text-[#5d4e37]">Discover pristine off-road trails through mountains, deserts, and wilderness</p>
+      {/* Difficulty Nav Pills */}
+      <nav className="py-4 px-4 bg-[#1a1f1c] border-b border-[#2d3530] sticky top-0 z-10">
+        <div className="container mx-auto max-w-5xl">
+          <div className="flex flex-wrap gap-2 justify-center">
+            <a href="#beginner-trails" className="px-4 py-2 rounded-full bg-[#4ade80]/20 text-[#4ade80] text-sm font-medium hover:bg-[#4ade80]/30 transition-colors">🟢 Beginner</a>
+            <a href="#moderate-trails" className="px-4 py-2 rounded-full bg-[#facc15]/20 text-[#facc15] text-sm font-medium hover:bg-[#facc15]/30 transition-colors">🟡 Moderate</a>
+            <a href="#advanced-trails" className="px-4 py-2 rounded-full bg-[#fb923c]/20 text-[#fb923c] text-sm font-medium hover:bg-[#fb923c]/30 transition-colors">🟠 Advanced</a>
+            <a href="#extreme-trails" className="px-4 py-2 rounded-full bg-[#ef4444]/20 text-[#ef4444] text-sm font-medium hover:bg-[#ef4444]/30 transition-colors">🔴 Extreme</a>
           </div>
-          <TrailGrid trails={trailsData} onSelectTrail={setSelectedTrail} />
         </div>
-      </section>
+      </nav>
 
-      {/* Mountain valley divider */}
-      <section 
-        className="relative h-64"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1920&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2d5a27]/60 to-[#8b4513]/60"></div>
-        <div className="container mx-auto h-full flex items-center justify-center relative z-10">
-          <p className="text-white text-2xl font-bold text-center">"Leave no trace, take only memories" 🌲</p>
-        </div>
-      </section>
+      {/* Trail Sections */}
+      <TrailSection 
+        title="Beginner Trails" 
+        description="Stock 4WD vehicles welcome. Perfect for first-timers and families."
+        trails={beginnerTrails}
+        icon="🟢"
+      />
+
+      <div className="bg-[#1e2521]">
+        <TrailSection 
+          title="Moderate Trails" 
+          description="All-terrain tires recommended. Some ground clearance and 4WD experience helpful."
+          trails={moderateTrails}
+          icon="🟡"
+        />
+      </div>
+
+      <TrailSection 
+        title="Advanced Trails" 
+        description="Lift kit and skid plates recommended. Rock sliders and quality tires essential."
+        trails={advancedTrails}
+        icon="🟠"
+      />
+
+      <div className="bg-[#1e2521]">
+        <TrailSection 
+          title="Extreme Trails" 
+          description="Built rigs only. Lockers, armor, and experience mandatory. Body damage highly likely."
+          trails={extremeTrails}
+          icon="🔴"
+        />
+      </div>
 
       {/* Recovery Section */}
-      <section id="recovery" className="py-16 px-4 bg-[#faf8f3]">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#2c2416] mb-2">🦅 Recovery Resources</h2>
-            <p className="text-[#5d4e37]">Stuck in the wilderness? These trail angels have your back</p>
+      <section id="recovery" className="py-12 px-4 bg-[#232a26] border-t border-[#2d3530]">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-[#f0f4f1] mb-2">🛠️ Recovery Resources</h2>
+            <p className="text-[#8a9a8e]">Stuck, broken, or need a tow? These folks have your back. All volunteers — be respectful and compensate for their time/fuel.</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-4 border-[#2d5a27]">
-              <div 
-                className="h-32"
-                style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              ></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#2c2416] mb-2">SoCal Crwlr</h3>
-                <span className="inline-block bg-[#2d5a27] text-[#f5f5dc] px-3 py-1 rounded-full text-sm mb-3">Available Now</span>
-                <p className="text-[#5d4e37] text-sm mb-4">All SoCal OHV Areas • Winch • Tow Straps • Recovery Rig</p>
-                <a 
-                  href="https://instagram.com/socal_crwlr" 
-                  target="_blank"
-                  className="inline-block bg-[#8b4513] text-[#f5f5dc] px-4 py-2 rounded hover:bg-[#d2691e] transition-colors"
-                >
-                  Contact @socal_crwlr
-                </a>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <div className="bg-[#1a1f1c] rounded-lg p-5 border border-[#2d3530]">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-bold text-[#f0f4f1]">SoCal Crwlr</h3>
+                <span className="px-2 py-1 rounded-full bg-[#4a7c59]/20 text-[#4a7c59] text-xs font-medium">Recovery Service</span>
               </div>
+              <p className="text-[#8a9a8e] text-sm mb-3">All SoCal OHV Areas</p>
+              <div className="flex flex-wrap gap-1 mb-4">
+                {['Winch', 'Tow Straps', 'Hi-Lift', 'Recovery Rig'].map(tag => (
+                  <span key={tag} className="text-xs bg-[#2d3530] text-[#8a9a8e] px-2 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
+              <a 
+                href="https://instagram.com/socal_crwlr" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#2d3530] hover:bg-[#3d4540] text-[#f0f4f1] px-4 py-2 rounded text-sm transition-colors border border-[#4a7c59]"
+              >
+                @socal_crwlr
+              </a>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border-l-4 border-[#8b4513]">
-              <div 
-                className="h-32"
-                style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=800&q=80)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              ></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#2c2416] mb-2">Rugged Repair</h3>
-                <span className="inline-block bg-[#8b4513] text-[#f5f5dc] px-3 py-1 rounded-full text-sm mb-3">Mobile Tech</span>
-                <p className="text-[#5d4e37] text-sm mb-4">Trail-Side Repairs • Welding • Tools • Get you rolling again</p>
-                <a 
-                  href="https://instagram.com/rugged_repair" 
-                  target="_blank"
-                  className="inline-block bg-[#2d5a27] text-[#f5f5dc] px-4 py-2 rounded hover:bg-[#d2691e] transition-colors"
-                >
-                  Contact @rugged_repair
-                </a>
+            <div className="bg-[#1a1f1c] rounded-lg p-5 border border-[#2d3530]">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-bold text-[#f0f4f1]">Rugged Repair</h3>
+                <span className="px-2 py-1 rounded-full bg-[#8b6914]/20 text-[#a67c1a] text-xs font-medium">Mobile Tech</span>
               </div>
+              <p className="text-[#8a9a8e] text-sm mb-3">Trail-Side Repairs & Recovery</p>
+              <div className="flex flex-wrap gap-1 mb-4">
+                {['Mobile Repair', 'Welding', 'Winch', 'Tools'].map(tag => (
+                  <span key={tag} className="text-xs bg-[#2d3530] text-[#8a9a8e] px-2 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
+              <a 
+                href="https://instagram.com/rugged_repair" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#2d3530] hover:bg-[#3d4540] text-[#f0f4f1] px-4 py-2 rounded text-sm transition-colors border border-[#4a7c59]"
+              >
+                @rugged_repair
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#2c2416] text-[#f5f5dc] py-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">🏔️</span>
-                <h4 className="font-bold text-lg">SoCal Off-Roaders</h4>
-              </div>
-              <p className="text-[#f5f5dc]/70 text-sm">Your guide to Southern California's wilderness trails. Respect the land, tread lightly, and preserve these wild places for future generations.</p>
+      <footer className="bg-[#1a1f1c] border-t border-[#2d3530] py-8 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <p className="text-[#8a9a8e] text-sm">© 2026 SoCal Off-Roaders — Leave no trace. Stay on designated trails.</p>
             </div>
-            <div>
-              <h4 className="font-bold text-lg mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="https://instagram.com/noah2131" target="_blank" className="text-[#f5f5dc]/70 hover:text-[#d2691e] transition-colors">@noah2131</a></li>
-                <li><a href="https://instagram.com/chevys.offroad" target="_blank" className="text-[#f5f5dc]/70 hover:text-[#d2691e] transition-colors">@chevys.offroad</a></li>
-              </ul>
+            <div className="flex items-center gap-4">
+              <a href="https://instagram.com/noah2131" target="_blank" className="text-[#8a9a8e] hover:text-[#f97316] text-sm transition-colors">@noah2131</a>
             </div>
-            <div>
-              <h4 className="font-bold text-lg mb-4">Trail Ethics</h4>
-              <ul className="space-y-2 text-sm text-[#f5f5dc]/70">
-                <li>🌲 Stay on designated trails</li>
-                <li>🗑️ Pack it in, pack it out</li>
-                <li>🐾 Respect wildlife</li>
-                <li>🤝 Help fellow wheelers</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-[#f5f5dc]/20 text-center text-sm text-[#f5f5dc]/50">
-            <p>&copy; 2026 SoCal Off-Roaders — Tread Lightly • Leave No Trace</p>
           </div>
         </div>
       </footer>
-
-      {/* Trail Detail Modal */}
-      {selectedTrail && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#faf8f3] rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
-            <div 
-              className="h-48 relative"
-              style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            >
-              <button 
-                onClick={() => setSelectedTrail(null)}
-                className="absolute top-4 right-4 bg-black/50 text-white w-8 h-8 rounded-full hover:bg-black/70"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-[#2c2416] mb-2">{selectedTrail.name}</h3>
-              <p className="text-[#5d4e37] mb-4">📍 {selectedTrail.location}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="inline-block bg-[#2d5a27] text-[#f5f5dc] px-3 py-1 rounded-full text-sm">
-                  {selectedTrail.difficulty}
-                </span>
-                {selectedTrail.tags.map(tag => (
-                  <span key={tag} className="inline-block bg-[#8b4513]/20 text-[#8b4513] px-3 py-1 rounded-full text-sm">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              
-              <p className="text-[#2c2416] mb-4">{selectedTrail.description}</p>
-              
-              <div className="bg-[#f0ebe0] p-4 rounded mb-4">
-                <p className="text-sm text-[#5d4e37]"><strong>Status:</strong> {selectedTrail.status}</p>
-                <p className="text-sm text-[#5d4e37]"><strong>Coordinates:</strong> {selectedTrail.coordinates}</p>
-              </div>
-              
-              <div className="flex gap-3">
-                <a 
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedTrail.name + ' ' + selectedTrail.location)}`}
-                  target="_blank"
-                  className="flex-1 bg-[#2d5a27] text-[#f5f5dc] text-center py-3 rounded hover:bg-[#1e3d1a] transition-colors"
-                >
-                  🗺️ Open in Maps
-                </a>
-                <button 
-                  onClick={() => setSelectedTrail(null)}
-                  className="flex-1 bg-[#8b4513] text-[#f5f5dc] py-3 rounded hover:bg-[#d2691e] transition-colors"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }

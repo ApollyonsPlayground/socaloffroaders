@@ -1,18 +1,32 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
 
-/* Nature-inspired custom theme overrides */
+/* Dark Nature Theme - Earth Tones */
 :root {
-  --color-primary: #2d5a27;
-  --color-primary-content: #f5f5dc;
-  --color-secondary: #8b4513;
-  --color-secondary-content: #f5f5dc;
-  --color-accent: #d2691e;
-  --color-accent-content: #ffffff;
-  --color-neutral: #5d4e37;
-  --color-neutral-content: #f5f5dc;
-  --color-base-100: #faf8f3;
-  --color-base-200: #f0ebe0;
-  --color-base-300: #e6dcc8;
-  --color-base-content: #2c2416;
+  --color-bg: #1a1f1c;
+  --color-bg-secondary: #232a26;
+  --color-bg-tertiary: #2d3530;
+  --color-bg-alt: #1e2521;
+  
+  --color-text: #f0f4f1;
+  --color-text-muted: #8a9a8e;
+  
+  /* Forest Greens */
+  --color-primary: #4a7c59;
+  --color-primary-hover: #5d996e;
+  --color-primary-dark: #3a6347;
+  
+  /* Earth Browns */
+  --color-accent: #8b6914;
+  --color-accent-hover: #a67c1a;
+  
+  /* Difficulty Colors */
+  --color-beginner: #4ade80;
+  --color-moderate: #facc15;
+  --color-advanced: #fb923c;
+  --color-extreme: #ef4444;
+  
+  /* ONX Orange */
+  --color-onx: #f97316;
+  --color-onx-hover: #ea580c;
 }
