@@ -180,10 +180,10 @@ export default function CommunityRunCard({ run }: CommunityRunCardProps) {
           disabled={isFull && !isJoined}
           className={`w-full py-3 px-4 rounded-lg font-semibold transition-all ${
             isJoined
-              ? 'bg-emerald-600/20 text-emerald-400 border border-emerald-600/40 hover:bg-emerald-600/30'
+              ? 'bg-emerald-600 text-emerald-50 border border-emerald-500 hover:bg-emerald-700 badge-success'
               : isFull
               ? 'bg-stone-700 text-stone-500 cursor-not-allowed'
-              : 'bg-orange-600 hover:bg-orange-700 text-stone-50 shadow-lg shadow-orange-600/20'
+              : 'bg-orange-600 hover:bg-orange-700 text-stone-50 shadow-lg shadow-orange-600/20 btn-primary'
           }`}
         >
           {isJoined ? (

@@ -14,7 +14,7 @@
     "tags": ["Beginner Friendly", "Fire Road", "Scenic Views", "Mountain Ridge"],
     "description": "Ridge run with incredible views. The main road is 2WD friendly; offshoots require 4x4. Perfect introduction to mountain wheeling with panoramic vistas of the Cajon Pass.",
     "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-    "onxUrl": "https://www.onxmaps.com/offroad/app/?q=34.3031,-117.4524",
+    "onxUrl": "https://webmap.onxmaps.com/offroad/map/@34.3031,-117.4524,14z",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.3031,-117.4524"
   },
   {
@@ -32,7 +32,7 @@
     "tags": ["360 Views", "High Altitude", "Rocky", "Mountain Peak"],
     "description": "The highest point in Orange County. Rutted climbs and steep drop-offs. Epic panoramic views from the summit make the challenge worthwhile. Check weather before attempting.",
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "onxUrl": "https://www.onxmaps.com/offroad/app/?q=33.7111,-117.5332",
+    "onxUrl": "https://webmap.onxmaps.com/offroad/map/@33.7111,-117.5332,14z",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.7111,-117.5332"
   },
   {
@@ -50,7 +50,7 @@
     "tags": ["Creek Crossings", "Camping", "Canyon", "Family Friendly"],
     "description": "Perfect for a quick run. Light water crossings and shaded campsites along the creek. Great for families and beginner groups looking to practice water crossing techniques.",
     "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80",
-    "onxUrl": "https://www.onxmaps.com/offroad/app/?q=34.2583,-117.5025",
+    "onxUrl": "https://webmap.onxmaps.com/offroad/map/@34.2583,-117.5025,14z",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2583,-117.5025"
   }
 ]
