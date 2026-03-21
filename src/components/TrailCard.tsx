@@ -38,13 +38,7 @@ export default function TrailCard({ trail, index }: TrailCardProps) {
   const colors = difficultyColors[trail.difficulty] || difficultyColors['Advanced'];
   const [imageError, setImageError] = useState(false);
   
-  // Alternate image sources for variety
-  const imageUrls = [
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    'https://images.unsplash.com/photo-1511884642898-4c92249f20b6?w=800&q=80',
-  ];
-  const imageUrl = imageUrls[index % imageUrls.length];
+  // Use the trail's specific image
 
   return (
     <div className="group bg-stone-800/40 backdrop-blur-sm rounded-2xl border border-stone-700 overflow-hidden hover:border-orange-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-900/10">
@@ -53,7 +47,7 @@ export default function TrailCard({ trail, index }: TrailCardProps) {
         {!imageError ? (
           <>
             <img 
-              src={imageUrl}
+              src={trail.image}
               alt={trail.name}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={() => setImageError(true)}
