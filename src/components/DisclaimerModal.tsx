@@ -50,23 +50,26 @@ export default function DisclaimerModal() {
           </div>
 
           {/* Content */}
-          <div className="p-6 space-y-4">
-            <p className="text-stone-300 leading-relaxed">
-              By entering, you acknowledge that <strong className="text-stone-100">off-roading is dangerous</strong>. 
-              SoCal Off-Roaders provides data for informational purposes only. 
+        <div className="p-6 space-y-4">
+          <p className="text-stone-300 leading-relaxed">
+            By entering, you acknowledge that <strong className="text-stone-100">off-roading is dangerous</strong>. SoCal Off-Roaders is a community platform, not a tour operator.
+          </p>
+          
+          <div className="bg-red-900/10 border border-red-900/30 rounded-lg p-4">
+            <p className="text-stone-300 text-sm font-medium mb-2 uppercase tracking-wide text-red-400">Owner Liability Waiver:</p>
+            <p className="text-stone-400 text-sm leading-relaxed">
+              The website owner is <strong className="text-stone-200">not responsible</strong> for cancelling/rescheduling runs or notifying participants of condition changes. Responsibility for communication and safety lies <strong className="text-stone-200">solely with the individual Run Organizer</strong>.
             </p>
+          </div>
 
-            <p className="text-stone-300 leading-relaxed">
-              <strong className="text-stone-100">You assume all risk</strong> and agree to hold organizers 
-              harmless from any liability for injury, death, or property damage.
-            </p>
-
-            <div className="bg-stone-800/50 border border-stone-700 rounded-lg p-4">
-              <p className="text-stone-400 text-sm">
-                <strong className="text-stone-200">Always verify trail closures</strong> with USFS/BLM 
-                before travel. Conditions change. Weather happens. Be prepared.
-              </p>
-            </div>
+          <p className="text-stone-300 leading-relaxed">
+            <strong className="text-stone-100">You assume all risk</strong> and hold SoCal Off-Roaders harmless from any liability for injury, death, or property damage.
+          </p>
+          
+          <p className="text-stone-500 text-xs italic">
+            Always verify trail closures with USFS/BLM before travel.
+          </p>
+        </div>
 
             <p className="text-stone-500 text-xs">
               This agreement is stored locally and will not be shown again on this device.
