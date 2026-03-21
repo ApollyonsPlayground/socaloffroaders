@@ -480,5 +480,97 @@
     "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/azusa-canyon",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1867,-117.8469"
+  },
+  {
+    "id": "jawbone-isabella",
+    "name": "Jawbone to Lake Isabella",
+    "location": "Jawbone Canyon / Lake Isabella",
+    "coordinates": "35.2667, -118.0167",
+    "difficulty": "Moderate",
+    "difficultyLevel": "Moderate",
+    "status": "Open",
+    "distance": "25 miles",
+    "time": "4-6 hours",
+    "terrain": "desert",
+    "rigRequirements": "4WD / High Clearance / All-Terrain Tires",
+    "tags": [
+      "Desert",
+      "Scenic Views",
+      "Lake Views",
+      "Backcountry"
+    ],
+    "description": "Epic desert traverse from Jawbone Canyon to Lake Isabella. Rolling hills, dry washes, and panoramic views of the Southern Sierra. Great for a full day adventure with camping options near the lake.",
+    "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80",
+    "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/jawbone-to-lake-isabella",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=35.2667,-118.0167"
+  },
+  {
+    "id": "burns-canyon",
+    "name": "Burns Canyon",
+    "location": "Pioneertown / Yucca Valley",
+    "coordinates": "34.1333, -116.5500",
+    "difficulty": "Advanced",
+    "difficultyLevel": "Moderate to Advanced",
+    "status": "Open",
+    "distance": "12 miles",
+    "time": "3-5 hours",
+    "terrain": "rock",
+    "rigRequirements": "Lifted / 33\" Tires / Skid Plates",
+    "tags": [
+      "Rock Sections",
+      "Desert",
+      "Scenic",
+      "Joshua Tree Area"
+    ],
+    "description": "Technical desert trail connecting Pioneertown to Burns Canyon. Rock gardens, sandy washes, and stunning Joshua tree scenery. Popular with local clubs for its variety of terrain challenges.",
+    "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80",
+    "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/burns-canyon",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1333,-116.5500"
+  },
+  {
+    "id": "holcomb-valley-road",
+    "name": "Holcomb Valley (3N16)",
+    "location": "Big Bear / Holcomb Valley",
+    "coordinates": "34.2833, -117.1000",
+    "difficulty": "Beginner",
+    "difficultyLevel": "Easy to Moderate",
+    "status": "Open",
+    "distance": "20 miles",
+    "time": "3-4 hours",
+    "terrain": "forest",
+    "rigRequirements": "Stock 4WD / All-Terrain Tires",
+    "tags": [
+      "Forest Road",
+      "Historic",
+      "Gold Rush",
+      "Big Bear"
+    ],
+    "description": "Historic wagon road through Holcomb Valley's gold rush country. Passes historic mining sites, old cabins, and the famous Wilbur's Grave. Perfect for families and history buffs.",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+    "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/3n16-holcomb-valley",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2833,-117.1000"
+  },
+  {
+    "id": "pilot-rock",
+    "name": "Pilot Rock Truck Trail",
+    "location": "Cajon Pass / San Bernardino Mountains",
+    "coordinates": "34.2167, -117.4000",
+    "difficulty": "Moderate",
+    "difficultyLevel": "Moderate",
+    "status": "Open",
+    "distance": "15 miles",
+    "time": "3-4 hours",
+    "terrain": "mountain",
+    "rigRequirements": "4WD / High Clearance / 33\" Tires Recommended",
+    "tags": [
+      "Mountain Views",
+      "Ridge Run",
+      "Cajon Pass",
+      "Scenic"
+    ],
+    "description": "Classic ridge run with commanding views of Cajon Pass and the I-15 corridor. Named for the distinctive Pilot Rock landmark visible throughout the trail. Mix of fire road and rocky sections.",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+    "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/pilot-rock-truck-trail",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2167,-117.4000"
   }
 ]

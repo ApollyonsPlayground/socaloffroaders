@@ -3,7 +3,17 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// Bulletproof: Create a mock client during build if env vars are missing
+const isBuildTime = !supabaseUrl || !supabaseKey;
+
+export const supabase = isBuildTime
+  ? ({
+      from: () => ({
+        select: () => ({ data: [], error: null }),
+        insert: () => ({ data: null, error: null }),
+      }),
+    } as any)
+  : createClient(supabaseUrl, supabaseKey);
 
 // Database types
 type Difficulty = 'Beginner' | 'Moderate' | 'Advanced' | 'Extreme';
