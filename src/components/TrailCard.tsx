@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { MapPin, Navigation, Mountain, Clock, Wrench } from 'lucide-react';
 
