@@ -108,8 +108,7 @@ export default function HomePage() {
               Recovery <span className="italic text-stone-400">Resources</span>
             </h2>
             <p className="text-stone-400 text-lg max-w-2xl mx-auto">
-              Stuck, broken, or need a tow? These trail angels have your back. 
-              All volunteers — be respectful and compensate for their time/fuel.
+              Stuck, broken, or need a tow? 
             </p>
           </div>
 
