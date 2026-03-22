@@ -11,7 +11,12 @@
     "time": "3-4 hours",
     "terrain": "mountain",
     "rigRequirements": "Stock 4WD / High-Clearance Recommended",
-    "tags": ["Beginner Friendly", "Fire Road", "Scenic Views", "Mountain Ridge"],
+    "tags": [
+      "Beginner Friendly",
+      "Fire Road",
+      "Scenic Views",
+      "Mountain Ridge"
+    ],
     "description": "Ridge run with incredible views. The main road is 2WD friendly; offshoots require 4x4. Perfect introduction to mountain wheeling with panoramic vistas of the Cajon Pass.",
     "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/cleghorn-ridge",
@@ -29,7 +34,12 @@
     "time": "2-3 hours",
     "terrain": "canyon",
     "rigRequirements": "Stock 4WD / All-Terrain Tires",
-    "tags": ["Creek Crossings", "Camping", "Canyon", "Family Friendly"],
+    "tags": [
+      "Creek Crossings",
+      "Camping",
+      "Canyon",
+      "Family Friendly"
+    ],
     "description": "Perfect for a quick run. Light water crossings and shaded campsites along the creek. Great for families and beginner groups looking to practice water crossing techniques.",
     "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/stockton-flats",
@@ -47,9 +57,14 @@
     "time": "3-5 hours",
     "terrain": "rock",
     "rigRequirements": "Lifted / 35-inch Tires / Lockers / Skid Plates",
-    "tags": ["Rock Crawling", "Technical", "Water Crossings", "Big Bear"],
+    "tags": [
+      "Rock Crawling",
+      "Technical",
+      "Water Crossings",
+      "Big Bear"
+    ],
     "description": "Iconic rock crawling trail. The Gatekeeper sets the tone - if you can't clear it, turn back. Holcomb Creek crossing and deep ruts make this a must-do for experienced wheelers.",
-    "image": "https://images.unsplash.com/photo-1542370285-b8ebdfce2b05?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/holcomb-creek",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2578,-117.0894"
   },
@@ -65,9 +80,14 @@
     "time": "4-5 hours",
     "terrain": "rock",
     "rigRequirements": "Lifted / 33-inch Tires / Skid Plates Recommended",
-    "tags": ["Rock Garden", "High Clearance Required", "Summit Views", "Big Bear"],
+    "tags": [
+      "Rock Garden",
+      "High Clearance Required",
+      "Summit Views",
+      "Big Bear"
+    ],
     "description": "Starts easy, ends challenging. The rock garden at the summit tests both driver and rig. Nylon strap recommended - this trail is notorious for body damage. Unmatched summit views of Baldwin Lake.",
-    "image": "https://images.unsplash.com/photo-1508853160052-566989fbe890?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/3n69-gold-mountain",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2722,-116.8247"
   },
@@ -83,9 +103,14 @@
     "time": "4-6 hours",
     "terrain": "rock",
     "rigRequirements": "Heavy Mods / 37-inch Tires / Lockers / Armor / Winch",
-    "tags": ["Extreme Rock Crawling", "Body Damage Likely", "Winch Required", "Big Bear"],
+    "tags": [
+      "Extreme Rock Crawling",
+      "Body Damage Likely",
+      "Winch Required",
+      "Big Bear"
+    ],
     "description": "The big leagues. Deep bowls, off-camber climbs, and shelf roads that'll test the best-built rigs. Named for the bathtub-size springs. Bring recovery gear and expect body damage.",
-    "image": "https://images.unsplash.com/photo-1526725227315-d91d1e4c4bd3?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/dishpan-springs",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2347,-117.0469"
   },
@@ -101,7 +126,12 @@
     "time": "2-3 days",
     "terrain": "desert",
     "rigRequirements": "Stock 4WD / Extra Fuel / Self-Recovery",
-    "tags": ["Desert Crossing", "Multi-Day", "Historic Route", "Camping"],
+    "tags": [
+      "Desert Crossing",
+      "Multi-Day",
+      "Historic Route",
+      "Camping"
+    ],
     "description": "Historic desert crossing from Colorado River to Barstow. Sand, lava tubes, volcanic formations, and the iconic Mojave mailbox. Bring extra fuel and water.",
     "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/mojave-road-central",
@@ -119,7 +149,12 @@
     "time": "Full Day",
     "terrain": "desert",
     "rigRequirements": "Stock 4WD / All-Terrain Tires / Flag Required",
-    "tags": ["Sand Dunes", "Badlands", "Camping", "Desert Playground"],
+    "tags": [
+      "Sand Dunes",
+      "Badlands",
+      "Camping",
+      "Desert Playground"
+    ],
     "description": "California's largest OHV area. Sand dunes, badlands, mud caves, and slot canyons. Blowsand Hill tests your climbing skills.",
     "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/ocotillo-wells-svra",
@@ -137,9 +172,14 @@
     "time": "4-6 hours",
     "terrain": "desert",
     "rigRequirements": "High Clearance / Skid Plates / Extra Fuel",
-    "tags": ["Desert", "Rock Sections", "National Park", "Historic"],
+    "tags": [
+      "Desert",
+      "Rock Sections",
+      "National Park",
+      "Historic"
+    ],
     "description": "Old road through Joshua Tree connecting Berdoo Canyon to Geology Tour Road. Rocky sections in Golden Bee Canyon require careful line choice.",
-    "image": "https://images.unsplash.com/photo-1550505096-7b44760ed928?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/berdoo-canyon",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.9014,-116.1481"
   },
@@ -155,7 +195,12 @@
     "time": "2-3 hours",
     "terrain": "forest",
     "rigRequirements": "Stock 4WD / All-Terrain Tires",
-    "tags": ["Forest Road", "Beginner Friendly", "Camping", "Big Bear"],
+    "tags": [
+      "Forest Road",
+      "Beginner Friendly",
+      "Camping",
+      "Big Bear"
+    ],
     "description": "Easy fire road perfect for beginners. Winding through pine forests with multiple spur roads for dispersed camping. Great for testing new rigs.",
     "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/coxey-road",
@@ -173,7 +218,12 @@
     "time": "Full Day",
     "terrain": "desert",
     "rigRequirements": "4WD / Wide Tires / Flag Required / Air Down",
-    "tags": ["Sand Dunes", "Competition Hill", "Camping", "OHV Area"],
+    "tags": [
+      "Sand Dunes",
+      "Competition Hill",
+      "Camping",
+      "OHV Area"
+    ],
     "description": "The tallest dunes in California. Competition Hill separates the brave from the willing. Wide-open sand playground with extreme terrain.",
     "image": "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/dumont-dunes",
@@ -191,9 +241,14 @@
     "time": "2-3 hours",
     "terrain": "mountain",
     "rigRequirements": "Lifted / 32-inch Tires / Skid Plates",
-    "tags": ["Narrow Trail", "Steep Climbs", "Off-Camber", "San Jacinto"],
+    "tags": [
+      "Narrow Trail",
+      "Steep Climbs",
+      "Off-Camber",
+      "San Jacinto"
+    ],
     "description": "Narrow shelf road winding through pine forest. Steep drop-offs and tight turns require precision.",
-    "image": "https://images.unsplash.com/photo-1511884642898-4c92249f20b6?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1433086966358-54859d9d716?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/thimble-trail",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.7361,-116.7242"
   },
@@ -209,9 +264,14 @@
     "time": "4-6 hours",
     "terrain": "rock",
     "rigRequirements": "Heavily Modified / 35-inch Tires / Lockers / Winch / Armor",
-    "tags": ["Rock Crawling", "Gatekeeper", "Body Damage Likely", "Big Bear"],
+    "tags": [
+      "Rock Crawling",
+      "Gatekeeper",
+      "Body Damage Likely",
+      "Big Bear"
+    ],
     "description": "The Gatekeeper stops most stock rigs. Deep ruts, massive ledges, and tight squeezes. Legendary for eating body panels.",
-    "image": "https://images.unsplash.com/photo-1542370285-b8ebdfce2b05?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/john-bull-trail",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2983,-117.0750"
   },
@@ -227,7 +287,12 @@
     "time": "3-4 hours",
     "terrain": "forest",
     "rigRequirements": "Lifted / 33-inch Tires / Skid Plates",
-    "tags": ["Rock Sections", "Creek Crossings", "Loop Trail", "Big Bear"],
+    "tags": [
+      "Rock Sections",
+      "Creek Crossings",
+      "Loop Trail",
+      "Big Bear"
+    ],
     "description": "Popular loop connecting historic Holcomb Valley sites. Mix of fire road and technical rock sections.",
     "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/odessa-doran-loop",
@@ -245,9 +310,14 @@
     "time": "3-5 hours",
     "terrain": "rock",
     "rigRequirements": "Rock Buggy / Trophy Truck / Experience Essential",
-    "tags": ["King of the Hammers", "Competition Course", "Ultra4", "Johnson Valley"],
+    "tags": [
+      "King of the Hammers",
+      "Competition Course",
+      "Ultra4",
+      "Johnson Valley"
+    ],
     "description": "Part of the King of the Hammers course. Extreme rock crawling and high-speed desert sections.",
-    "image": "https://images.unsplash.com/photo-1508853160052-566989fbe890?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/outer-limits",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.3833,-116.6167"
   },
@@ -263,7 +333,12 @@
     "time": "3-4 hours",
     "terrain": "desert",
     "rigRequirements": "Stock 4WD / 33-inch Tires / Skid Plates",
-    "tags": ["Desert", "Rock Sections", "Johnson Valley", "Scenic"],
+    "tags": [
+      "Desert",
+      "Rock Sections",
+      "Johnson Valley",
+      "Scenic"
+    ],
     "description": "Rolling desert trail with scenic views of Johnson Valley and surrounding ranges.",
     "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/jack-north",
@@ -281,9 +356,14 @@
     "time": "2-4 hours",
     "terrain": "rock",
     "rigRequirements": "Lifted / 35-inch Tires / Lockers",
-    "tags": ["Rock Crawling", "Ledges", "Johnson Valley", "Technical"],
+    "tags": [
+      "Rock Crawling",
+      "Ledges",
+      "Johnson Valley",
+      "Technical"
+    ],
     "description": "Named with humor, this trail delivers serious challenges. Steep rock ledges and tight squeezes.",
-    "image": "https://images.unsplash.com/photo-1526725227315-d91d1e4c4bd3?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/big-johnson",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.3767,-116.6000"
   },
@@ -299,7 +379,12 @@
     "time": "2-3 hours",
     "terrain": "mountain",
     "rigRequirements": "Any Vehicle / Pavement Ends",
-    "tags": ["Scenic Drive", "Forest", "San Jacinto", "Beginner"],
+    "tags": [
+      "Scenic Drive",
+      "Forest",
+      "San Jacinto",
+      "Beginner"
+    ],
     "description": "Scenic mountain road from Hemet to Idyllwild. Paved then graded dirt through pine forests.",
     "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/idyllwild-mountain-road",
@@ -317,29 +402,16 @@
     "time": "4-5 hours",
     "terrain": "desert",
     "rigRequirements": "4WD / All-Terrain Tires / Extra Fuel",
-    "tags": ["Desert", "Hill Climbs", "Salton Sea Views", "Off-Camber"],
+    "tags": [
+      "Desert",
+      "Hill Climbs",
+      "Salton Sea Views",
+      "Off-Camber"
+    ],
     "description": "Historic route through badlands near the Salton Sea. Winding climbs and descents.",
-    "image": "https://images.unsplash.com/photo-1550505096-7b44760ed928?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/truckhaven-trail",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=33.3056,-116.0917"
-  },
-  {
-    "id": "azusa-canyon",
-    "name": "Azusa Canyon (East Fork)",
-    "location": "San Gabriel Mountains",
-    "coordinates": "34.1867, -117.8469",
-    "difficulty": "Beginner",
-    "difficultyLevel": "Easy to Moderate",
-    "status": "Open",
-    "distance": "10 miles",
-    "time": "2-3 hours",
-    "terrain": "canyon",
-    "rigRequirements": "Stock 4WD / High Clearance",
-    "tags": ["River Crossings", "Camping", "San Gabriel", "Family Friendly"],
-    "description": "Mountain canyon following the East Fork of the San Gabriel River. Multiple water crossings.",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&q=80",
-    "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/san-gabriel-canyon-ohv-area",
-    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1867,-117.8469"
   },
   {
     "id": "jawbone-isabella",
@@ -353,7 +425,12 @@
     "time": "4-6 hours",
     "terrain": "desert",
     "rigRequirements": "4WD / High Clearance / All-Terrain Tires",
-    "tags": ["Desert", "Scenic Views", "Lake Views", "Backcountry"],
+    "tags": [
+      "Desert",
+      "Scenic Views",
+      "Lake Views",
+      "Backcountry"
+    ],
     "description": "Epic desert traverse from Jawbone Canyon to Lake Isabella. Rolling hills and dry washes.",
     "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/jawbone-to-lake-isabella",
@@ -371,9 +448,14 @@
     "time": "3-5 hours",
     "terrain": "rock",
     "rigRequirements": "Lifted / 33-inch Tires / Skid Plates",
-    "tags": ["Rock Sections", "Desert", "Scenic", "Joshua Tree Area"],
+    "tags": [
+      "Rock Sections",
+      "Desert",
+      "Scenic",
+      "Joshua Tree Area"
+    ],
     "description": "Technical desert trail connecting Pioneertown to Burns Canyon. Rock gardens and sandy washes.",
-    "image": "https://images.unsplash.com/photo-1508853160052-566989fbe890?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/burns-canyon",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.1333,-116.5500"
   },
@@ -389,7 +471,12 @@
     "time": "3-4 hours",
     "terrain": "forest",
     "rigRequirements": "Stock 4WD / All-Terrain Tires",
-    "tags": ["Forest Road", "Historic", "Gold Rush", "Big Bear"],
+    "tags": [
+      "Forest Road",
+      "Historic",
+      "Gold Rush",
+      "Big Bear"
+    ],
     "description": "Historic wagon road through Holcomb Valley's gold rush country. Passes historic mining sites.",
     "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/holcomb-valley-3n16",
@@ -407,7 +494,12 @@
     "time": "3-4 hours",
     "terrain": "mountain",
     "rigRequirements": "4WD / High Clearance / 33-inch Tires Recommended",
-    "tags": ["Mountain Views", "Ridge Run", "Cajon Pass", "Scenic"],
+    "tags": [
+      "Mountain Views",
+      "Ridge Run",
+      "Cajon Pass",
+      "Scenic"
+    ],
     "description": "Classic ridge run with commanding views of Cajon Pass and the I-15 corridor.",
     "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
     "onxUrl": "https://www.onxmaps.com/offroad/trails/us/california/pilot-rock-ohv",
