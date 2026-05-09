@@ -1,3 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "echo done"
+  publish = "public"
+
+[context.production.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
