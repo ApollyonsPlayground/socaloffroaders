@@ -1,1 +1,1 @@
-{"name": "socaloffroaders", "version": "1.0.0", "private": true, "scripts": {"build": "echo done"}}
+{"name": "socaloffroaders", "version": "1.0.0", "private": true, "scripts": {"build": "next build"}}
